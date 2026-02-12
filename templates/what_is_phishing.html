@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="wpContainer">
+    <header class="aboutHeader">
+        <h1 class="aboutTitle">What is Phishing?</h1>
+        <p class="aboutSubtitle">Understanding social engineering and how to stay safe.</p>
+    </header>
+
+    <section class="wpSection">
+        <h2 class="wpSectionTitle">How Phishing Works</h2>
+        <div class="textBlock">
+            <h3>1. The Initial Contact</h3>
+            <p>Phishing typically begins with a deceptive message sent via email, SMS, or social media. These messages
+                are designed to look like they come from a trusted source, such as your bank, a popular online store, or
+                even a colleague.</p>
+        </div>
+
+        <div class="textBlock">
+            <h3>2. Creating Urgency</h3>
+            <p>To force you into making a quick decision, the message often creates a sense of urgency or fear. It might
+                claim that your account has been compromised, a payment failed, or that you need to verify your identity
+                immediately to avoid losing access.</p>
+        </div>
+
+        <div class="textBlock">
+            <h3>3. The Malicious Link</h3>
+            <p>The message contains a link that supposedly takes you to a secure site to resolve the issue. In reality,
+                the link leads to a fake website that looks identical to the real one but is controlled by the attacker.
+            </p>
+        </div>
+
+        <div class="textBlock">
+            <h3>4. Data Theft</h3>
+            <p>Once you enter your username, password, or credit card details on the fake site, the attacker captures
+                this information. They can then use it to access your real accounts, steal your money, or sell your data
+                on the dark web.</p>
+        </div>
+    </section>
+
+    <section class="wpSection">
+        <h2 class="wpSectionTitle">Safety Checklist</h2>
+        <div class="checklist">
+            <ul>
+                <li><strong>Check sender details:</strong> Look for subtle spelling errors in the email address.</li>
+                <li><strong>Verify the URL:</strong> Hover over links to see where they actually lead.</li>
+                <li><strong>Don't trust urgency:</strong> Be suspicious of any message requiring immediate action with
+                    sensitive data.</li>
+                <li><strong>Use 2FA:</strong> Enable Two-Factor Authentication on all your important accounts.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="videoSection">
+        <h2 class="wpSectionTitle">Educational Video</h2>
+        <div class="videoWrapper">
+            <video controls class="video" poster="/static/favicon.ico">
+                <source src="/static/educational-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+</div>
+{% endblock %}

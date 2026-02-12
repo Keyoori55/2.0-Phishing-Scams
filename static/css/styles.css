@@ -1,0 +1,746 @@
+/* --- GLOBALS (globals.css) --- */
+:root {
+    --background: #f8fafc;
+    --foreground: #1e293b;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --surface: #ffffff;
+    --border: #cbd5e1;
+    --text: #0f172a;
+    --text-secondary: #64748b;
+    --radius: 8px;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: var(--text);
+    background: var(--background);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    padding-top: 70px;
+}
+
+.container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 1.25rem;
+    font-weight: 600;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+    border: 1px solid transparent;
+    font-size: 0.9375rem;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white !important;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+.btn-outline {
+    border-color: var(--border);
+    background: transparent;
+    color: var(--text);
+}
+
+.btn-outline:hover {
+    background: #f1f5f9;
+    border-color: var(--text-secondary);
+}
+
+main {
+    padding-bottom: 5rem;
+}
+
+/* --- NAVBAR (Navbar.module.css) --- */
+.navbar {
+    background: white;
+    border-bottom: 2px solid #e2e8f0;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.navLinks {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.navLink {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.9375rem;
+}
+
+.navLink:hover {
+    color: var(--primary);
+}
+
+.menuBtn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+}
+
+@media (max-width: 768px) {
+    .menuBtn {
+        display: block;
+    }
+
+    .navLinks {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 2rem;
+        border-bottom: 2px solid #e2e8f0;
+        gap: 1.5rem;
+    }
+
+    .navLinks.active {
+        display: flex;
+    }
+}
+
+/* --- HERO (Hero.module.css) --- */
+.hero {
+    padding: 6rem 0 4rem;
+    text-align: center;
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.heroContent {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.heroTitle {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #0f172a;
+    margin-bottom: 1.5rem;
+}
+
+.highlight {
+    color: var(--primary);
+}
+
+.heroSubtitle {
+    font-size: 1.125rem;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+.heroActions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .heroTitle {
+        font-size: 2.25rem;
+    }
+
+    .heroActions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* --- SCAN CARDS (ScanCards.module.css) --- */
+.scanSection {
+    padding: 4rem 0;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    color: #475569;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+.tab.active {
+    background: #2563eb !important;
+    color: white !important;
+    border-color: #2563eb !important;
+}
+
+.scanCard {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.inputGroup {
+    display: flex;
+    width: 100%;
+    gap: 0.75rem;
+}
+
+.input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.input:focus {
+    border-color: #2563eb;
+}
+
+.scanBtn {
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    background: #2563eb;
+    color: white;
+}
+
+.dropzone {
+    text-align: center;
+    padding: 3rem;
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    background: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+}
+
+.fileInputWrapper {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+}
+
+.hiddenInput {
+    display: none;
+}
+
+.scanningState {
+    text-align: center;
+    margin-top: 2rem;
+    color: #64748b;
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* --- ANALYSIS RESULT (AnalysisResult.module.css) --- */
+.resultContainer {
+    margin-top: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+.resultHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.resultTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.resultDate {
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+.verdict {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.verdictSafe {
+    color: #16a34a;
+    background: #f0fdf4;
+}
+
+.verdictDanger {
+    color: #dc2626;
+    background: #fef2f2;
+}
+
+.scoreContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.scoreCircle {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.circularChart {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.circleBg {
+    fill: none;
+    stroke: #f1f5f9;
+    stroke-width: 2.8;
+}
+
+.circle {
+    fill: none;
+    stroke: #2563eb;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.3s;
+}
+
+.percentage {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1e293b;
+}
+
+.scoreLabel {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.step {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 6px;
+}
+
+.stepIcon {
+    display: flex;
+    align-items: center;
+}
+
+.stepContent h4 {
+    font-size: 0.9375rem;
+    font-weight: 600;
+}
+
+.stepContent p {
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+.textSafe {
+    color: #16a34a;
+}
+
+.textWarning {
+    color: #d97706;
+}
+
+.textDanger {
+    color: #dc2626;
+}
+
+.resultFooter {
+    margin-top: 2rem;
+}
+
+/* --- FOOTER (Footer.module.css) --- */
+.footer {
+    background: #f1f5f9;
+    padding: 3rem 0;
+    border-top: 2px solid #e2e8f0;
+    margin-top: 4rem;
+}
+
+.footerContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.footerBrand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footerLogo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #1e293b;
+}
+
+.footerLinks a {
+    color: #475569;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin: 0 1rem;
+}
+
+.footerLinks a:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+.footerBottom {
+    text-align: center;
+    border-top: 1px solid #cbd5e1;
+    padding-top: 1.5rem;
+    color: #64748b;
+    font-size: 0.75rem;
+}
+
+/* --- ABOUT PAGE --- */
+.aboutContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+.aboutHeader {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2rem;
+}
+
+.aboutTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.aboutSubtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.aboutContent h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 2rem 0 1rem;
+    color: var(--text);
+}
+
+.aboutContent p {
+    line-height: 1.7;
+    color: #475569;
+    margin-bottom: 1.5rem;
+}
+
+/* --- FEEDBACK PAGE --- */
+.feedbackContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+.feedbackHeader {
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.feedbackTitle {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.feedbackForm {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    border-radius: 4px;
+}
+
+.formGroup {
+    margin-bottom: 2rem;
+}
+
+.formGroup label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.emojiGroup {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.emojiButton {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.emojiIcon {
+    font-size: 1.5rem;
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+
+.emojiLabel {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.emojiButton:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.activeEmoji {
+    background: #eff6ff !important;
+    border-color: var(--primary) !important;
+    border-width: 2px !important;
+}
+
+.activeEmoji .emojiIcon {
+    filter: grayscale(0%) !important;
+    opacity: 1 !important;
+}
+
+.activeEmoji .emojiLabel {
+    color: var(--primary) !important;
+}
+
+.successCard {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 3rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.successCard h1 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.successCard p {
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+}
+
+/* --- WHAT IS PHISHING --- */
+.wpContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+.wpSection {
+    margin-bottom: 3rem;
+}
+
+.wpSectionTitle {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+}
+
+.textBlock {
+    margin-bottom: 2rem;
+}
+
+.textBlock h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.textBlock p {
+    line-height: 1.6;
+    color: #475569;
+}
+
+.checklist {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 2rem;
+    border-radius: 4px;
+}
+
+.checklist ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.checklist li {
+    margin-bottom: 1rem;
+    color: #475569;
+}
+
+.videoSection {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.videoWrapper {
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    margin: 2rem auto;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    background: #000;
+}
+
+.video {
+    width: 100%;
+    display: block;
+}

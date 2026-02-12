@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container heroContent">
+        <h1 class="heroTitle">Protect Yourself from <br /><span class="highlight">Phishing Scams</span></h1>
+        <p class="heroSubtitle">Identify suspicious URLs, emails, and files using our real-time heuristic detection
+            engine. Simple, fast, and secure.</p>
+        <div class="heroActions">
+            <button class="btn btn-primary"
+                onclick="document.getElementById('scan-section').scrollIntoView({behavior: 'smooth'})">Get Started
+                Now</button>
+            <a href="/what-is-phishing" class="btn btn-outline">How it Works</a>
+        </div>
+    </div>
+</section>
+
+<!-- Scan Section -->
+<section class="scanSection" id="scan-section">
+    <div class="container">
+        <div class="tabs">
+            <button class="tab active" data-tab="url"><i data-lucide="link-2"></i> URL Scan</button>
+            <button class="tab" data-tab="email"><i data-lucide="mail"></i> Email Scan</button>
+            <button class="tab" data-tab="file"><i data-lucide="file-text"></i> File Scan</button>
+        </div>
+
+        <div class="scanCard">
+            <!-- URL Input Group -->
+            <div id="url-input" class="inputGroup">
+                <input type="text" id="url-field" placeholder="Paste URL to scan (e.g., http://example.com)"
+                    class="input">
+                <button class="scanBtn" id="scan-url-btn">
+                    <i data-lucide="arrow-right"></i>
+                </button>
+            </div>
+
+            <!-- Email Input Group (Hidden) -->
+            <div id="email-input" class="dropzone" style="display: none;">
+                <textarea id="email-field" class="textarea" placeholder="Paste email content here..."></textarea>
+                <button class="btn btn-primary" id="scan-email-btn" style="margin-top: 1rem;">Analyze Email</button>
+            </div>
+
+            <!-- File Input Group (Hidden) -->
+            <div id="file-input" class="dropzone" style="display: none;">
+                <label class="fileInputWrapper">
+                    <i data-lucide="file-text"
+                        style="width: 48px; height: 48px; margin-bottom: 1rem; color: #cbd5e1;"></i>
+                    <p id="file-name-display">Click to select a file</p>
+                    <input type="file" id="file-field" class="hiddenInput">
+                </label>
+                <button class="btn btn-primary" id="scan-file-btn" style="margin-top: 1rem;">Upload & Scan</button>
+            </div>
+        </div>
+
+        <!-- Scanning Loader (Hidden) -->
+        <div id="scanning-state" class="scanningState" style="display: none;">
+            <i data-lucide="loader-2" class="spin" style="width: 40px; height: 40px; margin-bottom: 1rem;"></i>
+            <p>Analyzing patterns...</p>
+        </div>
+
+        <!-- Result Container -->
+        <div id="result-container"></div>
+    </div>
+</section>
+{% endblock %}
