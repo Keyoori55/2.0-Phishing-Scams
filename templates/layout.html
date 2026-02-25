@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
     <header class="navbar">
         <div class="container navContainer">
@@ -20,6 +22,13 @@
                 <a href="/what-is-phishing" class="navLink">What is Phishing?</a>
                 <a href="/about" class="navLink">About Project</a>
                 <a href="/feedback" class="navLink">Feedback</a>
+                {% if session.get('user_id') %}
+                <a href="/dashboard" class="navLink">Dashboard</a>
+                <a href="/logout" class="navLink">Logout ({{ session.get('username') }})</a>
+                {% else %}
+                <a href="/login" class="navLink">Login</a>
+                <a href="/register" class="navLink">Register</a>
+                {% endif %}
             </nav>
             <button class="menuBtn" id="menuBtn">
                 <i data-lucide="menu"></i>
@@ -28,6 +37,15 @@
     </header>
 
     <main>
+        <div class="container" style="margin-top: 2rem;">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </div>
         {% block content %}{% endblock %}
     </main>
 
@@ -43,6 +61,13 @@
             </div>
             <div class="footerLinks" style="text-align: center; margin-bottom: 2rem;">
                 <a href="/">Home</a>
+                {% if session.get('user_id') %}
+                <a href="/dashboard">Dashboard</a>
+                <a href="/logout">Logout</a>
+                {% else %}
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+                {% endif %}
                 <a href="/what-is-phishing">What is Phishing?</a>
                 <a href="/about">About</a>
                 <a href="/feedback">Feedback</a>
@@ -57,7 +82,7 @@
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
-        
+
         // Mobile Menu Toggle
         const menuBtn = document.getElementById('menuBtn');
         const navLinks = document.getElementById('navLinks');
@@ -68,4 +93,5 @@
         }
     </script>
 </body>
+
 </html>

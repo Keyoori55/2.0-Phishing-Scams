@@ -1,0 +1,245 @@
+2026-02-25 18:01:19,372 - PhishingDetector - INFO - ML models loaded successfully.
+2026-02-25 18:01:19,462 - werkzeug - WARNING -  * Debugger is active!
+2026-02-25 18:01:19,466 - werkzeug - INFO -  * Debugger PIN: 445-275-735
+2026-02-25 18:01:19,854 - PhishingDetector - INFO - ML models loaded successfully.
+2026-02-25 18:01:19,939 - werkzeug - WARNING -  * Debugger is active!
+2026-02-25 18:01:19,942 - werkzeug - INFO -  * Debugger PIN: 445-275-735
+2026-02-25 18:01:48,250 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\detector.py', reloading
+2026-02-25 18:01:48,791 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\detector.py', reloading
+2026-02-25 18:01:49,250 - PhishingDetector - INFO - ML models loaded successfully.
+2026-02-25 18:01:49,332 - werkzeug - WARNING -  * Debugger is active!
+2026-02-25 18:01:49,333 - werkzeug - INFO -  * Debugger PIN: 445-275-735
+2026-02-25 18:01:49,756 - PhishingDetector - INFO - ML models loaded successfully.
+2026-02-25 18:01:49,834 - werkzeug - WARNING -  * Debugger is active!
+2026-02-25 18:01:49,836 - werkzeug - INFO -  * Debugger PIN: 445-275-735
+2026-02-25 18:02:01,443 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\ml_logic.py', reloading
+2026-02-25 18:02:01,937 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\ml_logic.py', reloading
+2026-02-25 18:02:02,373 - PhishingDetector - INFO - ML models loaded successfully.
+2026-02-25 18:02:02,452 - werkzeug - WARNING -  * Debugger is active!
+2026-02-25 18:02:02,455 - werkzeug - INFO -  * Debugger PIN: 445-275-735
+2026-02-25 18:02:02,935 - PhishingDetector - INFO - ML models loaded successfully.
+2026-02-25 18:02:03,017 - werkzeug - WARNING -  * Debugger is active!
+2026-02-25 18:02:03,019 - werkzeug - INFO -  * Debugger PIN: 445-275-735
+2026-02-25 18:02:34,418 - PhishingDetector - INFO - ML models loaded successfully.
+2026-02-25 18:02:34,421 - PhishingDetector - INFO - Analyzing email content...
+2026-02-25 18:02:34,422 - PhishingDetector - INFO - AI Prediction: legitimate (Confidence: 46.3%)
+2026-02-25 18:02:34,422 - PhishingDetector - INFO - Email Analysis Complete. Verdict: safe, Score: 100, EDS: 0.00
+2026-02-25 18:02:34,422 - PhishingDetector - INFO - Analyzing email content...
+2026-02-25 18:02:34,424 - PhishingDetector - INFO - AI Prediction: phishing (Confidence: 39.3%)
+2026-02-25 18:02:34,424 - PhishingDetector - INFO - Explicit phishing declaration detected.
+2026-02-25 18:02:34,424 - PhishingDetector - INFO - Email Analysis Complete. Verdict: danger, Score: 26.41741199449639, EDS: 0.00
+2026-02-25 18:02:34,424 - PhishingDetector - INFO - Analyzing email content...
+2026-02-25 18:02:34,426 - PhishingDetector - INFO - AI Prediction: phishing (Confidence: 39.9%)
+2026-02-25 18:02:34,426 - PhishingDetector - INFO - Email Analysis Complete. Verdict: danger, Score: 46.07793953260256, EDS: 0.20
+2026-02-25 18:02:34,426 - PhishingDetector - INFO - Analyzing email content...
+2026-02-25 18:02:34,428 - PhishingDetector - INFO - AI Prediction: legitimate (Confidence: 37.5%)
+2026-02-25 18:02:34,428 - PhishingDetector - INFO - Email Analysis Complete. Verdict: safe, Score: 100, EDS: 0.00
+2026-02-25 18:02:34,428 - PhishingDetector - INFO - Analyzing filename: invoice.pdf.exe
+2026-02-25 18:02:34,428 - PhishingDetector - INFO - AI File Prediction: phishing
+2026-02-25 18:02:34,429 - PhishingDetector - INFO - File Analysis Complete. Verdict: danger, Score: -10
+2026-02-25 18:02:34,429 - PhishingDetector - INFO - Analyzing filename: presentation.pptx
+2026-02-25 18:02:34,429 - PhishingDetector - INFO - AI File Prediction: legit
+2026-02-25 18:02:34,429 - PhishingDetector - INFO - File Analysis Complete. Verdict: safe, Score: 100
+2026-02-25 18:02:34,430 - PhishingDetector - INFO - Analyzing URL: http://testsafebrowsing.appspot.com
+2026-02-25 18:02:34,430 - PhishingDetector - WARNING - URL matched known threat database: http://testsafebrowsing.appspot.com
+2026-02-25 18:02:34,430 - PhishingDetector - INFO - Analyzing URL: https://www.google.com
+2026-02-25 18:02:34,430 - PhishingDetector - INFO - URL Analysis Complete. Verdict: safe, Score: 100
+2026-02-25 18:03:21,717 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:03:21] "GET / HTTP/1.1" 200 -
+2026-02-25 18:03:21,808 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:03:21] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:03:21,810 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:03:21] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:03:22,333 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:03:22] "GET / HTTP/1.1" 200 -
+2026-02-25 18:03:22,346 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:03:22] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:03:22,349 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:03:22] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:06:19,894 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:06:19] "GET / HTTP/1.1" 200 -
+2026-02-25 18:06:19,909 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:06:19] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:06:19,913 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:06:19] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:07:51,509 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:07:51] "GET /what-is-phishing HTTP/1.1" 200 -
+2026-02-25 18:07:51,524 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:07:51] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:07:51,525 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:07:51] "[36mGET /static/favicon.ico HTTP/1.1[0m" 304 -
+2026-02-25 18:07:51,526 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:07:51] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:07:51,623 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:07:51] "[35m[1mGET /static/educational-video.mp4 HTTP/1.1[0m" 206 -
+2026-02-25 18:07:53,087 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:07:53] "GET /about HTTP/1.1" 200 -
+2026-02-25 18:07:53,100 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:07:53] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:07:53,104 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:07:53] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:09:59,746 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:09:59] "GET /about HTTP/1.1" 200 -
+2026-02-25 18:09:59,759 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:09:59] "GET /static/css/styles.css HTTP/1.1" 200 -
+2026-02-25 18:09:59,762 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:09:59] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:10:01,336 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:10:01] "GET /about HTTP/1.1" 200 -
+2026-02-25 18:10:01,349 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:10:01] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:10:01,351 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:10:01] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:10:02,635 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:10:02] "GET / HTTP/1.1" 200 -
+2026-02-25 18:10:02,648 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:10:02] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:10:02,652 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:10:02] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:10:04,192 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:10:04] "GET /about HTTP/1.1" 200 -
+2026-02-25 18:10:04,205 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:10:04] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:10:04,207 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:10:04] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:10:07,335 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:10:07] "GET /login HTTP/1.1" 200 -
+2026-02-25 18:10:07,347 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:10:07] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:10:07,351 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:10:07] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:10:07,801 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:10:07] "GET /register HTTP/1.1" 200 -
+2026-02-25 18:10:07,813 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:10:07] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:10:07,817 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:10:07] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:10:23,804 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:10:23] "GET /login HTTP/1.1" 200 -
+2026-02-25 18:10:23,818 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:10:23] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:10:23,821 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:10:23] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:10:28,808 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:10:28] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-02-25 18:10:28,812 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:10:28] "GET / HTTP/1.1" 200 -
+2026-02-25 18:10:28,827 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:10:28] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:10:28,829 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:10:28] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:12:34,690 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:34] "GET / HTTP/1.1" 200 -
+2026-02-25 18:12:34,704 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:34] "GET /static/css/styles.css HTTP/1.1" 200 -
+2026-02-25 18:12:34,707 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:34] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:12:39,374 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:39] "GET / HTTP/1.1" 200 -
+2026-02-25 18:12:39,391 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:39] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:12:39,395 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:39] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:12:40,544 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:40] "GET /what-is-phishing HTTP/1.1" 200 -
+2026-02-25 18:12:40,557 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:40] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:12:40,562 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:40] "[36mGET /static/favicon.ico HTTP/1.1[0m" 304 -
+2026-02-25 18:12:40,564 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:40] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:12:40,573 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:40] "[35m[1mGET /static/educational-video.mp4 HTTP/1.1[0m" 206 -
+2026-02-25 18:12:40,577 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:40] "[35m[1mGET /static/educational-video.mp4 HTTP/1.1[0m" 206 -
+2026-02-25 18:12:41,752 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:41] "GET / HTTP/1.1" 200 -
+2026-02-25 18:12:41,765 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:41] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:12:41,770 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:41] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:12:42,467 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:42] "GET /about HTTP/1.1" 200 -
+2026-02-25 18:12:42,480 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:42] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:12:42,486 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:42] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:12:44,877 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:44] "GET /what-is-phishing HTTP/1.1" 200 -
+2026-02-25 18:12:44,890 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:44] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:12:44,896 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:44] "[36mGET /static/favicon.ico HTTP/1.1[0m" 304 -
+2026-02-25 18:12:44,898 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:44] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:12:44,906 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:44] "[35m[1mGET /static/educational-video.mp4 HTTP/1.1[0m" 206 -
+2026-02-25 18:12:47,487 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:47] "GET /feedback HTTP/1.1" 200 -
+2026-02-25 18:12:47,502 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:47] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:12:47,507 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:47] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:12:48,300 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:48] "GET /about HTTP/1.1" 200 -
+2026-02-25 18:12:48,313 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:48] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:12:48,318 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:48] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:12:49,415 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:49] "GET /dashboard HTTP/1.1" 200 -
+2026-02-25 18:12:49,432 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:49] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:12:49,435 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:12:49] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:15:48,477 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\app.py', reloading
+2026-02-25 18:15:48,759 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\app.py', reloading
+2026-02-25 18:15:49,439 - PhishingDetector - INFO - ML models loaded successfully.
+2026-02-25 18:15:49,498 - werkzeug - WARNING -  * Debugger is active!
+2026-02-25 18:15:49,499 - werkzeug - INFO -  * Debugger PIN: 445-275-735
+2026-02-25 18:15:49,692 - PhishingDetector - INFO - ML models loaded successfully.
+2026-02-25 18:15:49,746 - werkzeug - WARNING -  * Debugger is active!
+2026-02-25 18:15:49,749 - werkzeug - INFO -  * Debugger PIN: 445-275-735
+2026-02-25 18:15:57,588 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\database.py', reloading
+2026-02-25 18:15:57,827 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\database.py', reloading
+2026-02-25 18:15:58,511 - PhishingDetector - INFO - ML models loaded successfully.
+2026-02-25 18:15:58,567 - werkzeug - WARNING -  * Debugger is active!
+2026-02-25 18:15:58,570 - werkzeug - INFO -  * Debugger PIN: 445-275-735
+2026-02-25 18:15:58,739 - PhishingDetector - INFO - ML models loaded successfully.
+2026-02-25 18:15:58,789 - werkzeug - WARNING -  * Debugger is active!
+2026-02-25 18:15:58,791 - werkzeug - INFO -  * Debugger PIN: 445-275-735
+2026-02-25 18:16:14,886 - PhishingDetector - INFO - ML models loaded successfully.
+2026-02-25 18:16:14,946 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-02-25 18:16:14,946 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-02-25 18:16:14,948 - werkzeug - INFO -  * Restarting with stat
+2026-02-25 18:16:15,674 - PhishingDetector - INFO - ML models loaded successfully.
+2026-02-25 18:16:15,731 - werkzeug - WARNING -  * Debugger is active!
+2026-02-25 18:16:15,734 - werkzeug - INFO -  * Debugger PIN: 445-275-735
+2026-02-25 18:16:42,404 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:42] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2026-02-25 18:16:42,421 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:42] "GET /login HTTP/1.1" 200 -
+2026-02-25 18:16:42,510 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:42] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:16:42,514 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:42] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:16:43,349 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:43] "GET /login HTTP/1.1" 200 -
+2026-02-25 18:16:43,362 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:16:43,366 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:43] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:16:45,323 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:45] "GET /what-is-phishing HTTP/1.1" 200 -
+2026-02-25 18:16:45,335 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:16:45,340 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:45] "[36mGET /static/favicon.ico HTTP/1.1[0m" 304 -
+2026-02-25 18:16:45,342 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:45] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:16:45,360 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:45] "[35m[1mGET /static/educational-video.mp4 HTTP/1.1[0m" 206 -
+2026-02-25 18:16:45,364 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:45] "[35m[1mGET /static/educational-video.mp4 HTTP/1.1[0m" 206 -
+2026-02-25 18:16:46,559 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:46] "GET /about HTTP/1.1" 200 -
+2026-02-25 18:16:46,574 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:46] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:16:46,579 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:46] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:16:47,175 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:47] "GET / HTTP/1.1" 200 -
+2026-02-25 18:16:47,189 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:47] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:16:47,192 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:47] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:16:49,461 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:49] "GET /login HTTP/1.1" 200 -
+2026-02-25 18:16:49,476 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:49] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:16:49,479 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:49] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:16:55,026 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:55] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-02-25 18:16:55,031 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:55] "GET / HTTP/1.1" 200 -
+2026-02-25 18:16:55,048 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:55] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:16:55,050 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:55] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:16:57,899 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:57] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-02-25 18:16:57,904 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:57] "GET / HTTP/1.1" 200 -
+2026-02-25 18:16:57,926 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:57] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:16:57,929 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:57] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:16:59,438 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:59] "GET /register HTTP/1.1" 200 -
+2026-02-25 18:16:59,451 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:59] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:16:59,455 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:16:59] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:17:06,050 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:17:06] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-02-25 18:17:06,054 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:17:06] "GET /login HTTP/1.1" 200 -
+2026-02-25 18:17:06,072 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:17:06] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:17:06,073 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:17:06] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:17:10,628 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:17:10] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-02-25 18:17:10,632 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:17:10] "GET / HTTP/1.1" 200 -
+2026-02-25 18:17:10,651 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:17:10] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:17:10,653 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:17:10] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:17:13,049 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:17:13] "GET /dashboard HTTP/1.1" 200 -
+2026-02-25 18:17:13,061 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:17:13] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:17:13,065 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:17:13] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:18:06,047 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:06] "GET /what-is-phishing HTTP/1.1" 200 -
+2026-02-25 18:18:06,063 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:06] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:18:06,069 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:06] "[36mGET /static/favicon.ico HTTP/1.1[0m" 304 -
+2026-02-25 18:18:06,070 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:06] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:18:06,150 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:06] "[35m[1mGET /static/educational-video.mp4 HTTP/1.1[0m" 206 -
+2026-02-25 18:18:09,217 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:09] "GET /dashboard HTTP/1.1" 200 -
+2026-02-25 18:18:09,229 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:09] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:18:09,233 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:09] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:18:12,035 - PhishingDetector.MLLogic - INFO - Loaded 10 samples from datasets.
+2026-02-25 18:18:12,098 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:12] "POST /api/retrain HTTP/1.1" 200 -
+2026-02-25 18:18:15,989 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:15] "GET /dashboard HTTP/1.1" 200 -
+2026-02-25 18:18:16,004 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:16] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:18:16,005 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:16] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:18:21,849 - PhishingDetector.MLLogic - INFO - Loaded 10 samples from datasets.
+2026-02-25 18:18:21,906 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:21] "POST /api/retrain HTTP/1.1" 200 -
+2026-02-25 18:18:24,796 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:24] "GET /dashboard HTTP/1.1" 200 -
+2026-02-25 18:18:24,810 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:24] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:18:24,813 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:24] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:18:25,766 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:25] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-02-25 18:18:25,771 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:25] "GET / HTTP/1.1" 200 -
+2026-02-25 18:18:25,788 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:25] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:18:25,791 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:25] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:18:28,835 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:28] "GET /login HTTP/1.1" 200 -
+2026-02-25 18:18:28,850 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:28] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:18:28,854 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:28] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:18:33,514 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:33] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-02-25 18:18:33,516 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:33] "GET / HTTP/1.1" 200 -
+2026-02-25 18:18:33,537 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:33] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:18:33,538 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:33] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:18:35,972 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:35] "GET /dashboard HTTP/1.1" 200 -
+2026-02-25 18:18:35,986 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:35] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:18:35,989 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:35] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:18:37,513 - PhishingDetector.MLLogic - INFO - Loaded 10 samples from datasets.
+2026-02-25 18:18:37,568 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:37] "POST /api/retrain HTTP/1.1" 200 -
+2026-02-25 18:18:40,194 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:40] "GET /dashboard HTTP/1.1" 200 -
+2026-02-25 18:18:40,209 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:40] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:18:40,210 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:18:40] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:19:12,012 - PhishingDetector.MLLogic - INFO - Loaded 10 samples from datasets.
+2026-02-25 18:19:12,075 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:19:12] "POST /api/retrain HTTP/1.1" 200 -
+2026-02-25 18:19:13,393 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:19:13] "GET /dashboard HTTP/1.1" 200 -
+2026-02-25 18:19:13,414 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:19:13] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:19:13,415 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:19:13] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:27:08,675 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:27:08] "GET /dashboard HTTP/1.1" 200 -
+2026-02-25 18:27:08,690 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:27:08] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:27:08,694 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:27:08] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:27:09,034 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:27:09] "GET /dashboard HTTP/1.1" 200 -
+2026-02-25 18:27:09,049 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:27:09] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:27:09,051 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:27:09] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:27:09,247 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:27:09] "GET /dashboard HTTP/1.1" 200 -
+2026-02-25 18:27:09,261 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:27:09] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:27:09,263 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:27:09] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:27:09,438 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:27:09] "GET /dashboard HTTP/1.1" 200 -
+2026-02-25 18:27:09,451 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:27:09] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:27:09,454 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:27:09] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-02-25 18:27:09,637 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:27:09] "GET /dashboard HTTP/1.1" 200 -
+2026-02-25 18:27:09,651 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:27:09] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-02-25 18:27:09,653 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:27:09] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -

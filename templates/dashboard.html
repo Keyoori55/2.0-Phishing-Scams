@@ -1,0 +1,203 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<section class="dashboard-section">
+    <div class="container">
+        <div class="dashboard-header" style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <h1><i data-lucide="layout-dashboard"></i> Detection Dashboard</h1>
+                <p>Performance trends of the Phishing Detector AI Engine</p>
+            </div>
+            <button id="retrain-btn" class="btn btn-outline" style="border-color: #2563eb; color: #2563eb;">
+                <i data-lucide="refresh-cw"></i> Retrain AI Engine
+            </button>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Personal History List -->
+            <div class="dashboard-card history-card">
+                <h3><i data-lucide="user"></i> My Recent Scans</h3>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Type</th>
+                                <th>Identifier</th>
+                                <th>Score</th>
+                                <th>Verdict</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for scan in user_scans %}
+                            <tr>
+                                <td>{{ scan.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
+                                <td><span class="badge badge-info">{{ scan.type|upper }}</span></td>
+                                <td
+                                    style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                    {{ scan.identifier }}</td>
+                                <td>{{ (scan.score * 100)|round(1) }}%</td>
+                                <td>
+                                    {% if scan.verdict == 'danger' or scan.verdict == 'phishing' %}
+                                    <span class="status-danger" style="color: #dc2626;"><i data-lucide="alert-triangle"
+                                            style="width: 14px; height: 14px;"></i> Danger</span>
+                                    {% elif scan.verdict == 'warning' or scan.verdict == 'suspicious' %}
+                                    <span class="status-warning" style="color: #d97706;"><i data-lucide="alert-circle"
+                                            style="width: 14px; height: 14px;"></i> Warning</span>
+                                    {% else %}
+                                    <span class="status-safe" style="color: #16a34a;"><i data-lucide="check-circle"
+                                            style="width: 14px; height: 14px;"></i> Safe</span>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% else %}
+                            <tr>
+                                <td colspan="5" style="text-align: center;">You haven't performed any scans yet.</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Chart Card -->
+            <div class="dashboard-card chart-card">
+                <h3><i data-lucide="line-chart"></i> Performance Trends</h3>
+                <div class="chart-container" style="position: relative; height:300px; width:100%">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+            </div>
+
+            <!-- History Table Card -->
+            <div class="dashboard-card table-card">
+                <h3><i data-lucide="history"></i> Model Update History</h3>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Model Name</th>
+                                <th>Version</th>
+                                <th>Accuracy</th>
+                                <th>F1 Score</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for record in history %}
+                            <tr>
+                                <td>{{ record.training_date.strftime('%Y-%m-%d %H:%M') }}</td>
+                                <td>{{ record.model_type }}</td>
+                                <td>{{ record.version }}</td>
+                                <td><span class="badge badge-success">{{ (record.accuracy * 100)|round(2) }}%</span>
+                                </td>
+                                <td><span class="badge badge-info">{{ (record.f1_score * 100)|round(2) }}%</span></td>
+                                <td>
+                                    {% if record.active_status %}
+                                    <span class="status-active">Active</span>
+                                    {% else %}
+                                    <span class="status-inactive">Inactive</span>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% else %}
+                            <tr>
+                                <td colspan="6" style="text-align: center;">No model history data available.</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Include Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const labels = [];
+        const accuracyData = [];
+        const f1Data = [];
+
+        // Parse data from Flask
+        {% for record in history | reverse %}
+        labels.push('{{ record.training_date.strftime("%m/%d") }} (v{{ record.version }})');
+        accuracyData.push({{ record.accuracy }});
+    f1Data.push({{ record.f1_score }});
+    {% endfor %}
+
+    const ctx = document.getElementById('performanceChart').getContext('2d');
+    const performanceChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Accuracy',
+                    data: accuracyData,
+                    borderColor: '#2563eb',
+                    backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                },
+                {
+                    label: 'F1 Score',
+                    data: f1Data,
+                    borderColor: '#10b981',
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: false,
+                    min: 0.5,
+                    max: 1.0
+                }
+            }
+        }
+    });
+    // Retrain Logic
+    document.getElementById('retrain-btn').addEventListener('click', async function () {
+        if (!confirm("Are you sure you want to retrain the AI models? This may take a few seconds.")) return;
+
+        const btn = this;
+        const originalHtml = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = '<i data-lucide="loader-2" class="spin"></i> Retraining...';
+        lucide.createIcons();
+
+        try {
+            const response = await fetch('/api/retrain', { method: 'POST' });
+            const data = await response.json();
+            if (data.success) {
+                alert(`Success! Models retrained.\nEmail Accuracy: ${(data.email_accuracy * 100).toFixed(2)}%\nFile Accuracy: ${(data.file_accuracy * 100).toFixed(2)}%`);
+                window.location.reload();
+            } else {
+                alert("Error: " + data.error);
+                btn.disabled = false;
+                btn.innerHTML = originalHtml;
+                lucide.createIcons();
+            }
+        } catch (err) {
+            alert("Failed to connect to server.");
+            btn.disabled = false;
+            btn.innerHTML = originalHtml;
+            lucide.createIcons();
+        }
+    });
+    });
+</script>
+{% endblock %}

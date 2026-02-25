@@ -39,17 +39,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const renderResult = (data) => {
         const isSafe = data.verdict === 'safe';
-        const verdictClass = isSafe ? 'verdictSafe' : 'verdictDanger';
-        const verdictText = isSafe ? 'Safe to Open' : 'Threat Detected';
-        const iconClass = isSafe ? 'textSafe' : 'textDanger';
-        const lucideIcon = isSafe ? 'shield' : 'alert-triangle';
+        const isWarning = data.verdict === 'warning';
+
+        let verdictClass = 'verdictSafe';
+        let verdictText = 'Safe to Open';
+        let lucideIcon = 'shield';
+
+        if (isWarning) {
+            verdictClass = 'verdictWarning';
+            verdictText = 'Caution Recommended';
+            lucideIcon = 'alert-circle';
+        } else if (!isSafe) {
+            verdictClass = 'verdictDanger';
+            verdictText = 'Threat Detected';
+            lucideIcon = 'alert-triangle';
+        }
 
         let stepsHtml = '';
         data.steps.forEach(step => {
             let stepIcon = 'check-circle';
             let statusClass = 'textSafe';
             if (step.status === 'warning') {
-                stepIcon = 'alert-triangle';
+                stepIcon = 'alert-circle';
                 statusClass = 'textWarning';
             } else if (step.status === 'danger') {
                 stepIcon = 'alert-triangle';

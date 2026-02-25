@@ -2,17 +2,39 @@ import re
 import time
 import joblib
 import os
+import logging
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler("scan_logs.log"),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger("PhishingDetector")
 
 # Load ML models
 try:
     email_model = joblib.load('models/email_model.joblib')
     file_model = joblib.load('models/file_model.joblib')
     ML_AVAILABLE = True
-except:
+    logger.info("ML models loaded successfully.")
+except Exception as e:
     ML_AVAILABLE = False
-    print("Warning: ML models not found. Falling back to rule-based detection only.")
+    logger.warning(f"ML models not found: {e}. Falling back to rule-based detection.")
 
-def analyze_url(url):
+def analyze_url(url: str) -> dict:
+    """
+    Analyzes a URL for potential phishing indicators using a hybrid rule-based approach.
+    
+    Args:
+        url: The URL string to analyze.
+        
+    Returns:
+        A dictionary containing the verdict, risk score, and step-by-step breakdown.
+    """
     score = 100
     verdict = "safe"
     steps = [
@@ -23,6 +45,7 @@ def analyze_url(url):
     ]
 
     lower_url = url.lower()
+    logger.info(f"Analyzing URL: {url}")
 
     # 1. KNOWN THREATS DATABASE
     known_threats = [
@@ -33,6 +56,7 @@ def analyze_url(url):
     ]
 
     if any(threat in lower_url for threat in known_threats):
+        logger.warning(f"URL matched known threat database: {url}")
         return {
             "verdict": "danger",
             "score": 10,
@@ -69,11 +93,22 @@ def analyze_url(url):
         score -= 40
         steps[1] = {"name": "Structure Analysis", "status": "danger", "details": "URL contains '@' (Authorization Bypass Attempt)"}
 
-    # 5. TYPOSQUATTING & BRAND MIMICRY
-    suspicious_brands = ["g00gle", "goggle", "paypa1", "paypaI", "amaz0n", "micros0ft", "n0rton", "faceb00k", "netf1ix"]
-    if any(brand in lower_url for brand in suspicious_brands):
-        score -= 50
-        steps[2] = {"name": "Brand & Keywords", "status": "danger", "details": "Typosquatting Detected (Brand Mimicry)"}
+    # 5. TYPOSQUATTING & LOOK-ALIKE DOMAINS
+    look_alikes = {
+        'google': ['g00gle', 'goggle', 'goooogle', 'googIe'],
+        'paypal': ['paypa1', 'paypai', 'pay-pal', 'paly-pal'],
+        'amazon': ['amaz0n', 'amizon', 'amz-on'],
+        'microsoft': ['micros0ft', 'rnicrosoft', 'mircosoft'],
+        'facebook': ['faceb00k', 'face-book', 'faacebook'],
+        'apple': ['appIe', 'appe1'],
+        'netflix': ['netf1ix', 'net-flix']
+    }
+    
+    for brand, variants in look_alikes.items():
+        if any(variant in lower_url for variant in variants):
+            score -= 50
+            steps[2] = {"name": "Brand & Keywords", "status": "danger", "details": f"Look-alike domain detected (Mimicking {brand.capitalize()})"}
+            break
 
     # 6. SENSITIVE KEYWORDS
     keywords = ["login", "signin", "verify", "account", "update", "bank", "secure", "confirm", "wallet"]
@@ -96,10 +131,20 @@ def analyze_url(url):
     elif score < 85:
         verdict = "warning"
 
+    logger.info(f"URL Analysis Complete. Verdict: {verdict}, Score: {score}")
     return {"verdict": verdict, "score": max(0, score), "steps": steps}
 
 
-def analyze_email(text):
+def analyze_email(text: str) -> dict:
+    """
+    Analyzes email content for phishing indicators using AI models and rule-based heuristics.
+    
+    Args:
+        text: The email body text.
+        
+    Returns:
+        A dictionary containing the verdict, score, probability, and emotional deception analysis.
+    """
     score = 100
     verdict = "safe"
     steps = [
@@ -110,6 +155,7 @@ def analyze_email(text):
     ]
 
     lower_text = text.lower()
+    logger.info("Analyzing email content...")
     
     # Emotional Deception Score (EDS) Breakdown
     eds = {
@@ -122,19 +168,25 @@ def analyze_email(text):
 
     # 1. ML Analysis (AI)
     ml_confidence = 0.0
+    ml_label = 'legitimate'
     if ML_AVAILABLE:
-        label = email_model.predict([text])[0]
-        probs = email_model.predict_proba([text])[0]
-        ml_confidence = float(max(probs))
-        
-        if label == 'phishing':
-            score -= 50 * ml_confidence
-            steps[1] = {"name": "AI Prediction", "status": "danger", "details": f"AI flagged as PHISHING (Confidence: {ml_confidence:.1%})"}
-        elif label == 'suspicious':
-            score -= 25 * ml_confidence
-            steps[1] = {"name": "AI Prediction", "status": "warning", "details": f"AI flagged as SUSPICIOUS (Confidence: {ml_confidence:.1%})"}
-        else:
-            steps[1] = {"name": "AI Prediction", "status": "safe", "details": f"AI flagged as LEGIT (Confidence: {ml_confidence:.1%})"}
+        try:
+            ml_label = email_model.predict([text])[0]
+            probs = email_model.predict_proba([text])[0]
+            ml_confidence = float(max(probs))
+            logger.info(f"AI Prediction: {ml_label} (Confidence: {ml_confidence:.1%})")
+            
+            if ml_label == 'phishing':
+                score -= 60 * ml_confidence
+                steps[1] = {"name": "AI Prediction", "status": "danger", "details": f"AI flagged as PHISHING (Confidence: {ml_confidence:.1%})"}
+            elif ml_label == 'suspicious':
+                score -= 30 * ml_confidence
+                steps[1] = {"name": "AI Prediction", "status": "warning", "details": f"AI flagged as SUSPICIOUS (Confidence: {ml_confidence:.1%})"}
+            elif ml_label == 'legitimate':
+                steps[1] = {"name": "AI Prediction", "status": "safe", "details": f"AI flagged as LEGITIMATE (Confidence: {ml_confidence:.1%})"}
+        except Exception as e:
+            logger.error(f"ML prediction error: {e}")
+            steps[1] = {"name": "AI Prediction", "status": "warning", "details": "ML prediction engine error"}
 
     # 2. URGENCY / SOCIAL ENGINEERING
     urgency_words = ["urgent", "immediately", "24 hours", "suspended", "locked", "unusual activity", "action required", "expiring", "now"]
@@ -184,13 +236,32 @@ def analyze_email(text):
         score -= 20
         steps[3] = {"name": "Link Inspection", "status": "warning", "details": "Contains shortened or insecure links"}
 
+    # 9. EXPLICIT PHISHING DECLARATIONS
+    phishing_declarations = ["this is a phishing email", "identified as phishing", "phishing warning", "report this phishing"]
+    if any(decl in lower_text for decl in phishing_declarations):
+        educational_keywords = ["educational", "awareness", "what is", "learn about"]
+        is_educational = any(edu in lower_text for edu in educational_keywords)
+        
+        if not is_educational:
+            logger.info("Explicit phishing declaration detected.")
+            score -= 50
+            if steps[0]["status"] == "safe":
+                steps[0] = {"name": "Rule Analysis", "status": "danger", "details": "Explicit phishing warning or declaration detected"}
+            else:
+                steps[0]["status"] = "danger"
+                steps[0]["details"] += " | Explicit phishing warning detected"
+        else:
+            logger.info("Educational phishing content detected (safe).")
+            score += 10
+            steps[0] = {"name": "Rule Analysis", "status": "safe", "details": "Educational content about phishing detected"}
+
     if score <= 50:
         verdict = "danger"
     elif score < 85:
         verdict = "warning"
 
-    # Overall EDS is an average of the components for the main score
     total_eds = sum(eds.values()) / 5.0
+    logger.info(f"Email Analysis Complete. Verdict: {verdict}, Score: {score}, EDS: {total_eds:.2f}")
 
     return {
         "verdict": verdict, 
@@ -199,11 +270,20 @@ def analyze_email(text):
         "phishing_probability": (100 - score) / 100.0,
         "emotional_deception_score": total_eds,
         "eds_breakdown": eds,
-        "confidence": ml_confidence if ML_AVAILABLE else 0.8 # Default confidence for rule-based
+        "confidence": ml_confidence if ML_AVAILABLE else 0.8
     }
 
 
-def analyze_file(file_name):
+def analyze_file(file_name: str) -> dict:
+    """
+    Analyzes a filename for potential malicious indicators using AI and heuristics.
+    
+    Args:
+        file_name: The name of the file to analyze.
+        
+    Returns:
+        A dictionary containing the verdict, score, and steps.
+    """
     score = 100
     verdict = "safe"
     steps = [
@@ -213,18 +293,24 @@ def analyze_file(file_name):
     ]
 
     lower_name = file_name.lower()
+    logger.info(f"Analyzing filename: {file_name}")
 
     # 1. ML Analysis (AI)
     if ML_AVAILABLE:
-        label = file_model.predict([file_name])[0]
-        if label == 'phishing':
-            score -= 60
-            steps[0] = {"name": "AI Extension Scan", "status": "danger", "details": "AI identifies this filename pattern as MALICIOUS"}
-        elif label == 'suspicious':
-            score -= 30
-            steps[0] = {"name": "AI Extension Scan", "status": "warning", "details": "AI identifies this filename pattern as SUSPICIOUS"}
-        else:
-            steps[0] = {"name": "AI Extension Scan", "status": "safe", "details": "AI identifies this filename pattern as SAFE"}
+        try:
+            label = file_model.predict([file_name])[0]
+            logger.info(f"AI File Prediction: {label}")
+            if label == 'phishing':
+                score -= 60
+                steps[0] = {"name": "AI Extension Scan", "status": "danger", "details": "AI identifies this filename pattern as MALICIOUS (Phishing)"}
+            elif label == 'suspicious':
+                score -= 30
+                steps[0] = {"name": "AI Extension Scan", "status": "warning", "details": "AI identifies this filename pattern as SUSPICIOUS"}
+            elif label == 'legitimate':
+                steps[0] = {"name": "AI Extension Scan", "status": "safe", "details": "AI identifies this filename pattern as LEGITIMATE"}
+        except Exception as e:
+            logger.error(f"File ML prediction error: {e}")
+            steps[0] = {"name": "AI Extension Scan", "status": "warning", "details": "ML prediction engine error"}
 
     # Double Extension
     if lower_name.count(".") > 1:
@@ -242,4 +328,5 @@ def analyze_file(file_name):
     elif score < 90:
         verdict = "warning"
 
+    logger.info(f"File Analysis Complete. Verdict: {verdict}, Score: {score}")
     return {"verdict": verdict, "score": max(0, score), "steps": steps}

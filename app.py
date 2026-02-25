@@ -1,16 +1,89 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, session, redirect, url_for, flash
 from logic.detector import analyze_url, analyze_email, analyze_file
-from logic.database import init_db, store_email_scan, store_scan_log, store_feedback
+from logic.database import (
+    init_db, store_email_scan, store_scan_log, store_feedback, 
+    create_user, verify_user_login, get_all_model_history, 
+    get_user_scan_history, get_user
+)
 import time
+import os
+from functools import wraps
 
 app = Flask(__name__)
+app.secret_key = os.urandom(24) # Strong random key for sessions
 
 # Initialize database
 init_db()
 
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'user_id' not in session:
+            flash("Please log in to access this page.", "warning")
+            return redirect(url_for('login'))
+        return f(*args, **kwargs)
+    return decorated_function
+
 @app.route('/')
 def home():
     return render_template('index.html')
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        email = request.form.get('email')
+        password = request.form.get('password')
+        
+        if not username or not email or not password:
+            flash("All fields are required.", "danger")
+            return render_template('register.html')
+            
+        status = create_user(username, email, password)
+        if status == "SUCCESS":
+            flash("Registration successful! Please log in.", "success")
+            return redirect(url_for('login'))
+        elif status == "ALREADY_EXISTS":
+            flash("Registration failed. Email or username already exists.", "danger")
+        elif status == "CONNECTION_ERROR":
+            flash("Database connection error. Please ensure your local MySQL server is running (port 3306).", "danger")
+        else:
+            flash("An unexpected error occurred during registration.", "danger")
+            
+    return render_template('register.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form.get('email')
+        password = request.form.get('password')
+        
+        status, user = verify_user_login(email, password)
+        if status == "SUCCESS":
+            # Full login
+            session['user_id'] = user['id']
+            session['username'] = user['username']
+            flash(f"Welcome back, {user['username']}!", "success")
+            return redirect(url_for('home'))
+        elif status == "CONNECTION_ERROR":
+            flash("Database connection error. Please ensure your local MySQL server is running.", "danger")
+        else:
+            flash("Invalid email or password.", "danger")
+            
+    return render_template('login.html')
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    flash("You have been logged out.", "info")
+    return redirect(url_for('home'))
+
+@app.route('/dashboard')
+@login_required
+def dashboard():
+    history = get_all_model_history()
+    user_scans = get_user_scan_history(session['user_id'])
+    return render_template('dashboard.html', history=history, user_scans=user_scans)
 
 @app.route('/about')
 def about():
@@ -36,7 +109,8 @@ def scan_url():
     result = analyze_url(url)
     
     # Store in database logs
-    store_scan_log('url', float(result['score']), result['verdict'])
+    user_id = session.get('user_id')
+    store_scan_log('url', float(result['score']), result['verdict'], identifier=url, user_id=user_id)
     
     return jsonify(result)
 
@@ -52,6 +126,7 @@ def scan_email():
     result = analyze_email(text)
     
     # Store in database
+    user_id = session.get('user_id')
     store_email_scan({
         "subject": "Email Scan", # Subject is not provided in text-only scan
         "sender": "Web Interface",
@@ -60,7 +135,7 @@ def scan_email():
         "emotional_deception_score": result['emotional_deception_score'],
         "verdict": result['verdict'],
         "confidence": result['confidence']
-    }, result['eds_breakdown'])
+    }, result['eds_breakdown'], user_id=user_id)
     
     return jsonify(result)
 
@@ -77,7 +152,11 @@ def scan_file():
     result = analyze_file(file_name)
     
     # Store in database logs
-    store_scan_log('file', float(result['score']), result['verdict'])
+    user_id = session.get('user_id')
+    try:
+        store_scan_log('file', float(result['score']), result['verdict'], identifier=file_name, user_id=user_id)
+    except Exception as e:
+        print(f"Database logging error: {e}")
     
     return jsonify(result)
 
@@ -96,6 +175,22 @@ def submit_feedback():
         return jsonify({"success": True, "message": "Feedback stored successfully"})
     else:
         return jsonify({"success": False, "error": "Failed to store feedback"}), 500
+
+@app.route('/api/retrain', methods=['POST'])
+def retrain_models():
+    # Hidden route for triggering AI retraining
+    from train_model import train_email_model, train_file_model
+    try:
+        e_acc, e_f1 = train_email_model()
+        f_acc, f_f1 = train_file_model()
+        return jsonify({
+            "success": True, 
+            "message": "Models retrained successfully",
+            "email_accuracy": e_acc,
+            "file_accuracy": f_acc
+        })
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
