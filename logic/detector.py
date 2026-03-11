@@ -132,7 +132,7 @@ def analyze_url(url: str) -> dict:
         verdict = "warning"
 
     logger.info(f"URL Analysis Complete. Verdict: {verdict}, Score: {score}")
-    return {"verdict": verdict, "score": max(0, score), "steps": steps}
+    return {"verdict": verdict, "score": round(max(0, score), 2), "steps": steps}
 
 
 def analyze_email(text: str) -> dict:
@@ -265,12 +265,12 @@ def analyze_email(text: str) -> dict:
 
     return {
         "verdict": verdict, 
-        "score": max(0, score), 
+        "score": round(max(0, score), 2), 
         "steps": steps,
-        "phishing_probability": (100 - score) / 100.0,
-        "emotional_deception_score": total_eds,
-        "eds_breakdown": eds,
-        "confidence": ml_confidence if ML_AVAILABLE else 0.8
+        "phishing_probability": round((100 - score) / 100.0, 4),
+        "emotional_deception_score": round(total_eds, 4),
+        "eds_breakdown": {k: round(v, 4) for k, v in eds.items()},
+        "confidence": round(ml_confidence if ML_AVAILABLE else 0.8, 4)
     }
 
 
@@ -329,4 +329,4 @@ def analyze_file(file_name: str) -> dict:
         verdict = "warning"
 
     logger.info(f"File Analysis Complete. Verdict: {verdict}, Score: {score}")
-    return {"verdict": verdict, "score": max(0, score), "steps": steps}
+    return {"verdict": verdict, "score": round(max(0, score), 2), "steps": steps}

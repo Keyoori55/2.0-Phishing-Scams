@@ -96,12 +96,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="scoreCircle">
                     <svg viewBox="0 0 36 36" class="circularChart">
                         <path class="circleBg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                        <path class="circle" stroke-dasharray="${data.score}, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle ${isSafe ? 'circleSafe' : (isWarning ? 'circleWarning' : 'circleDanger')}" stroke-dasharray="${100 - data.score}, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                     </svg>
                     <div class="percentage">
-                        <span class="number">${data.score}</span>
-                        <span class="scoreLabel">Safety Score</span>
+                        <span class="number">${(100 - data.score).toFixed(2)}%</span>
+                        <span class="scoreLabel">Phishing Risk</span>
                     </div>
+                </div>
+                <div class="risk-level-container" style="text-align: center; margin-top: 1rem;">
+                    <p style="font-weight: 700; font-size: 1.1rem; color: ${isSafe ? '#16a34a' : (isWarning ? '#f59e0b' : '#dc2626')}">
+                        Risk Level: ${isSafe ? 'LOW' : (isWarning ? 'MEDIUM' : 'HIGH')}
+                    </p>
                 </div>
             </div>
 
@@ -141,8 +146,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 2. Email Scan
-    document.getElementById('scan-email-btn').addEventListener('click', async () => {
-        const text = document.getElementById('email-field').value;
+    const emailField = document.getElementById('email-field');
+    const emailFileField = document.getElementById('email-file-field');
+    const emailFileNameDisplay = document.getElementById('email-file-name-display');
+    const scanEmailBtn = document.getElementById('scan-email-btn');
+    const scanEmailFileBtn = document.getElementById('scan-email-file-btn');
+
+    emailFileField.addEventListener('change', (e) => {
+        if (e.target.files.length > 0) {
+            emailFileNameDisplay.textContent = e.target.files[0].name;
+            scanEmailFileBtn.disabled = false;
+        }
+    });
+
+    scanEmailBtn.addEventListener('click', async () => {
+        const text = emailField.value;
         if (!text) return;
 
         showLoading(true);
@@ -158,6 +176,32 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (err) {
             showLoading(false);
             alert('Error scanning email');
+        }
+    });
+
+    scanEmailFileBtn.addEventListener('click', async () => {
+        const file = emailFileField.files[0];
+        if (!file) return;
+
+        const formData = new FormData();
+        formData.append('file', file);
+
+        showLoading(true);
+        try {
+            const response = await fetch('/api/scan/email-file', {
+                method: 'POST',
+                body: formData
+            });
+            const data = await response.json();
+            showLoading(false);
+            if (data.error) {
+                alert(data.error);
+            } else {
+                renderResult(data);
+            }
+        } catch (err) {
+            showLoading(false);
+            alert('Error scanning email file');
         }
     });
 

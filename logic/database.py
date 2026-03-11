@@ -417,3 +417,94 @@ def log_model_performance(model_type, version, accuracy, f1_score):
     finally:
         cursor.close()
         conn.close()
+def get_dashboard_stats(user_id):
+    """Aggregates statistics for dashboard charts."""
+    conn = get_db_connection()
+    if not conn:
+        return None
+    
+    stats = {
+        'phishing_vs_legitimate': {'phishing': 0, 'legitimate': 0},
+        'scans_over_time': {'labels': [], 'data': []},
+        'risk_distribution': {'low': 0, 'medium': 0, 'high': 0},
+        'top_indicators': {'labels': ['Fear', 'Urgency', 'Trust', 'Greed', 'Authority'], 'data': [0, 0, 0, 0, 0]}
+    }
+    
+    cursor = conn.cursor(dictionary=True)
+    
+    try:
+        # 1. Phishing vs Legitimate
+        query_v = (
+            "SELECT verdict, COUNT(*) as count FROM ("
+            "  SELECT verdict FROM emails WHERE user_id = %s "
+            "  UNION ALL "
+            "  SELECT verdict FROM scan_logs WHERE user_id = %s"
+            ") as combined GROUP BY verdict"
+        )
+        cursor.execute(query_v, (user_id, user_id))
+        rows = cursor.fetchall()
+        for row in rows:
+            if row['verdict'] in ['danger', 'phishing']:
+                stats['phishing_vs_legitimate']['phishing'] += row['count']
+            elif row['verdict'] == 'safe':
+                stats['phishing_vs_legitimate']['legitimate'] += row['count']
+
+        # 2. Scans Over Time (Last 7 days)
+        query_t = (
+            "SELECT DATE(created_at) as date, COUNT(*) as count FROM ("
+            "  SELECT created_at FROM emails WHERE user_id = %s "
+            "  UNION ALL "
+            "  SELECT created_at FROM scan_logs WHERE user_id = %s"
+            ") as combined "
+            "WHERE created_at >= DATE_SUB(CURDATE(), INTERVAL 7 DAY) "
+            "GROUP BY DATE(created_at) ORDER BY DATE(created_at)"
+        )
+        cursor.execute(query_t, (user_id, user_id))
+        rows = cursor.fetchall()
+        for row in rows:
+            stats['scans_over_time']['labels'].append(row['date'].strftime('%a'))
+            stats['scans_over_time']['data'].append(row['count'])
+
+        # 3. Risk Level Distribution
+        query_r = (
+            "SELECT score FROM ("
+            "  SELECT phishing_probability as score FROM emails WHERE user_id = %s "
+            "  UNION ALL "
+            "  SELECT risk_score as score FROM scan_logs WHERE user_id = %s"
+            ") as combined"
+        )
+        cursor.execute(query_r, (user_id, user_id))
+        rows = cursor.fetchall()
+        for row in rows:
+            score = float(row['score']) * 100
+            if score < 30:
+                stats['risk_distribution']['low'] += 1
+            elif score < 70:
+                stats['risk_distribution']['medium'] += 1
+            else:
+                stats['risk_distribution']['high'] += 1
+
+        # 4. Top Indicators (Averages)
+        query_i = (
+            "SELECT AVG(fear) as fear, AVG(urgency) as urgency, AVG(trust) as trust, "
+            "AVG(greed) as greed, AVG(authority) as authority FROM emotion_scores es "
+            "JOIN emails e ON es.email_id = e.id WHERE e.user_id = %s"
+        )
+        cursor.execute(query_i, (user_id,))
+        row = cursor.fetchone()
+        if row and row['fear'] is not None:
+            stats['top_indicators']['data'] = [
+                round(float(row['fear']), 2),
+                round(float(row['urgency']), 2),
+                round(float(row['trust']), 2),
+                round(float(row['greed']), 2),
+                round(float(row['authority']), 2)
+            ]
+
+        return stats
+    except mysql.connector.Error as err:
+        print(f"Error fetching dashboard stats: {err}")
+        return None
+    finally:
+        cursor.close()
+        conn.close()

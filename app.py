@@ -3,10 +3,11 @@ from logic.detector import analyze_url, analyze_email, analyze_file
 from logic.database import (
     init_db, store_email_scan, store_scan_log, store_feedback, 
     create_user, verify_user_login, get_all_model_history, 
-    get_user_scan_history, get_user
+    get_user_scan_history, get_user, get_dashboard_stats
 )
 import time
 import os
+import json
 from functools import wraps
 
 app = Flask(__name__)
@@ -83,7 +84,11 @@ def logout():
 def dashboard():
     history = get_all_model_history()
     user_scans = get_user_scan_history(session['user_id'])
-    return render_template('dashboard.html', history=history, user_scans=user_scans)
+    stats = get_dashboard_stats(session['user_id'])
+    return render_template('dashboard.html', 
+                          history=history, 
+                          user_scans=user_scans,
+                          stats=json.dumps(stats) if stats else None)
 
 @app.route('/about')
 def about():
@@ -110,7 +115,8 @@ def scan_url():
     
     # Store in database logs
     user_id = session.get('user_id')
-    store_scan_log('url', float(result['score']), result['verdict'], identifier=url, user_id=user_id)
+    risk_score = (100 - float(result['score'])) / 100.0
+    store_scan_log('url', risk_score, result['verdict'], identifier=url, user_id=user_id)
     
     return jsonify(result)
 
@@ -139,6 +145,66 @@ def scan_email():
     
     return jsonify(result)
 
+@app.route('/api/scan/email-file', methods=['POST'])
+def scan_email_file():
+    if 'file' not in request.files:
+        return jsonify({"error": "No file part"}), 400
+    
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({"error": "No selected file"}), 400
+
+    filename = file.filename.lower()
+    content = ""
+    
+    try:
+        if filename.endswith('.txt'):
+            content = file.read().decode('utf-8', errors='ignore')
+        elif filename.endswith('.eml'):
+            import email
+            raw_eml = file.read().decode('utf-8', errors='ignore')
+            msg = email.message_from_string(raw_eml)
+            if msg.is_multipart():
+                for part in msg.walk():
+                    if part.get_content_type() == "text/plain":
+                        content = part.get_payload(decode=True).decode('utf-8', errors='ignore')
+                        break
+            else:
+                content = msg.get_payload(decode=True).decode('utf-8', errors='ignore')
+        elif filename.endswith('.msg'):
+            try:
+                import extract_msg
+                msg = extract_msg.Message(file.read())
+                content = msg.body
+            except ImportError:
+                return jsonify({"error": "MSG file support is not enabled. Please contact administrator to install extract-msg."}), 400
+        else:
+            return jsonify({"error": "Unsupported file format"}), 400
+            
+    except Exception as e:
+        return jsonify({"error": f"Failed to parse file: {str(e)}"}), 500
+
+    if not content.strip():
+        return jsonify({"error": "Could not extract text from email file"}), 400
+
+    # Simulate processing time
+    time.sleep(1.5)
+    result = analyze_email(content)
+    
+    # Store in database
+    user_id = session.get('user_id')
+    store_email_scan({
+        "subject": f"File: {file.filename}",
+        "sender": "Web Upload",
+        "body": content[:500] + "...", # Store snippet
+        "phishing_probability": result['phishing_probability'],
+        "emotional_deception_score": result['emotional_deception_score'],
+        "verdict": result['verdict'],
+        "confidence": result['confidence']
+    }, result['eds_breakdown'], user_id=user_id)
+    
+    return jsonify(result)
+
 @app.route('/api/scan/file', methods=['POST'])
 def scan_file():
     # In a real app we'd handle the file upload, 
@@ -154,7 +220,8 @@ def scan_file():
     # Store in database logs
     user_id = session.get('user_id')
     try:
-        store_scan_log('file', float(result['score']), result['verdict'], identifier=file_name, user_id=user_id)
+        risk_score = (100 - float(result['score'])) / 100.0
+        store_scan_log('file', risk_score, result['verdict'], identifier=file_name, user_id=user_id)
     except Exception as e:
         print(f"Database logging error: {e}")
     

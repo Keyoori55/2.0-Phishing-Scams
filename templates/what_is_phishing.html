@@ -52,12 +52,51 @@
     </section>
 
     <section class="videoSection">
-        <h2 class="wpSectionTitle">🎥 Educational Video</h2>
-        <div class="videoWrapper">
-            <video controls class="video" poster="/static/favicon.ico">
-                <source src="/static/educational-video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <h2 class="wpSectionTitle">🎥 Educational Video Gallery</h2>
+        <div class="videoGallery">
+            <!-- Video 1 -->
+            <div class="videoCard">
+                <div class="videoEmbed">
+                    <iframe src="https://www.youtube.com/embed/3GBmpqhQI8s" title="Phishing Awareness Video 1" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="videoInfo">
+                    <h4>What is Phishing?</h4>
+                    <p>A comprehensive overview of phishing attacks and how they target individuals.</p>
+                </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="videoCard">
+                <div class="videoEmbed">
+                    <iframe src="https://www.youtube.com/embed/HsUA3tguWZc" title="Phishing Awareness Video 2" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="videoInfo">
+                    <h4>Phishing Scams Explained</h4>
+                    <p>Learn to identify common red flags in suspicious messages.</p>
+                </div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="videoCard">
+                <div class="videoEmbed">
+                    <iframe src="https://www.youtube.com/embed/vqiRHdTx0pY" title="Phishing Awareness Video 3" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="videoInfo">
+                    <h4>How to Stop Phishing</h4>
+                    <p>Practical steps to protect your personal and professional information.</p>
+                </div>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="videoCard">
+                <div class="videoEmbed">
+                    <iframe src="https://www.youtube.com/embed/FfV1hqb7v74" title="Phishing Awareness Video 4" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="videoInfo">
+                    <h4>Identifying Phishing Attacks</h4>
+                    <p>Real-world examples of phishing and how to spot them before clicking.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -89,15 +128,6 @@
                         data-lucide="external-link"></i></a>
             </div>
 
-            <div class="resourceCard">
-                <div>
-                    <span class="locationBadge US">USA</span>
-                    <h4>CISA - Phishing Awareness</h4>
-                    <p>US Cybersecurity & Infrastructure Security Agency's guide to stopping phishing attacks.</p>
-                </div>
-                <a href="https://www.cisa.gov/news-events/news/phishing-guidance-stopping-attack-cycle-phase-one"
-                    target="_blank" class="resourceLink">Read Guidance <i data-lucide="external-link"></i></a>
-            </div>
 
             <div class="resourceCard">
                 <div>
@@ -130,50 +160,6 @@
             </div>
         </div>
 
-        <h3 class="resourceSubTitle">🎥 Educational YouTube Videos</h3>
-        <p class="sectionDesc">Selected videos covering phishing detection, AI-driven scams, and modern security trends.
-        </p>
-        <div class="videoGallery">
-            <div class="videoCard">
-                <div class="videoInfo">
-                    <span class="tag">Beginner</span>
-                    <h4>Google Safety Center: Phishing Tips</h4>
-                    <p>Official tips on identifying phishing attempts and securing your Google account.</p>
-                    <a href="https://www.youtube.com/watch?v=kuG2u3F8F98" target="_blank" class="resourceLink">Watch
-                        Video <i data-lucide="play-circle"></i></a>
-                </div>
-            </div>
-
-            <div class="videoCard">
-                <div class="videoInfo">
-                    <span class="tag">Strategy</span>
-                    <h4>CISA: Avoid Phishing!</h4>
-                    <p>An animated series teaching how to recognize and report suspicious messages.</p>
-                    <a href="https://www.youtube.com/watch?v=F3xO2L72a8s" target="_blank" class="resourceLink">Watch
-                        Video <i data-lucide="play-circle"></i></a>
-                </div>
-            </div>
-
-            <div class="videoCard">
-                <div class="videoInfo">
-                    <span class="tag">2025 Trends</span>
-                    <h4>Huntress: 2025 Phishing Scams</h4>
-                    <p>A deep dive into the latest e-signature and AI-driven image-based phishing scams.</p>
-                    <a href="https://www.youtube.com/watch?v=Yf-C-d0a-bU" target="_blank" class="resourceLink">Watch
-                        Video <i data-lucide="play-circle"></i></a>
-                </div>
-            </div>
-
-            <div class="videoCard">
-                <div class="videoInfo">
-                    <span class="tag">AI & ML</span>
-                    <h4>AI-Driven Phishing Detection</h4>
-                    <p>Understanding how AI and NLP are used to detect and prevent sophisticated phishing.</p>
-                    <a href="https://www.youtube.com/watch?v=L2GjK8m2p9g" target="_blank" class="resourceLink">Watch
-                        Video <i data-lucide="play-circle"></i></a>
-                </div>
-            </div>
-        </div>
 
         <h3 class="resourceSubTitle">📰 Essential Articles & Identifying Guides</h3>
         <p class="sectionDesc">In-depth reading from investigative journalists and security experts.</p>
@@ -196,14 +182,6 @@
                         data-lucide="external-link"></i></a>
             </div>
 
-            <div class="resourceCard">
-                <div>
-                    <h4>Dark Reading - Phishing Section</h4>
-                    <p>Insights into evolving phishing techniques and technology trends in defense.</p>
-                </div>
-                <a href="https://www.darkreading.com/endpoint-security/phishing" target="_blank"
-                    class="resourceLink">Read Articles <i data-lucide="external-link"></i></a>
-            </div>
 
             <div class="resourceCard">
                 <div>
@@ -218,14 +196,6 @@
         <h3 class="resourceSubTitle">🛠️ Security Awareness Tools</h3>
         <p class="sectionDesc">Tools and platforms for continuous phishing simulation and training.</p>
         <div class="resourceGrid">
-            <div class="resourceCard">
-                <div>
-                    <h4>KnowBe4 Resource Center</h4>
-                    <p>Extensive library of phishing simulation templates and industry benchmarks.</p>
-                </div>
-                <a href="https://www.knowbe4.com/resource-center" target="_blank" class="resourceLink">Explore Tools <i
-                        data-lucide="external-link"></i></a>
-            </div>
 
             <div class="resourceCard">
                 <div>
