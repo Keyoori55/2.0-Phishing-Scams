@@ -5,7 +5,7 @@ import logging
 from email import policy
 from typing import Optional
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.naive_bayes import MultinomialNB
+from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 
 logger = logging.getLogger("PhishingDetector.MLLogic")
@@ -13,12 +13,6 @@ logger = logging.getLogger("PhishingDetector.MLLogic")
 def load_text_from_file(file_path: str) -> str:
     """
     Reads content from .txt or .eml files.
-    
-    Args:
-        file_path: Path to the file.
-        
-    Returns:
-        The extracted text content.
     """
     ext = os.path.splitext(file_path)[1].lower()
     try:
@@ -33,7 +27,7 @@ def load_text_from_file(file_path: str) -> str:
                 else:
                     content = msg.get_content()
                 return content or ""
-        else: # Default to .txt or other text-like files
+        else:
             with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
                 return f.read()
     except Exception as e:
@@ -43,12 +37,6 @@ def load_text_from_file(file_path: str) -> str:
 def load_raw_datasets(base_path: str = 'datasets') -> pd.DataFrame:
     """
     Loads email data from the datasets directory structure.
-    
-    Args:
-        base_path: The root path of the datasets.
-        
-    Returns:
-        A pandas DataFrame with 'text' and 'label' columns.
     """
     data = []
     categories = ['legitimate', 'suspicious', 'phishing']
@@ -69,25 +57,34 @@ def load_raw_datasets(base_path: str = 'datasets') -> pd.DataFrame:
                 if text.strip():
                     data.append({'text': text, 'label': category})
     
-    logger.info(f"Loaded {len(data)} samples from {base_path}.")
-    return pd.DataFrame(data)
+    df = pd.DataFrame(data)
+    if df.empty:
+        logger.warning("No data loaded for training.")
+    return df
 
 def get_email_pipeline():
-    """Returns the ML pipeline for email classification."""
+    """
+    Returns an optimized scikit-learn pipeline for email classification.
+    """
     return Pipeline([
         ('tfidf', TfidfVectorizer(
-            stop_words='english', 
-            ngram_range=(1, 3), # Increased to capture "this is a phishing email"
-            min_df=1,
-            lowercase=True,
-            strip_accents='unicode'
+            stop_words='english',
+            max_features=10000,
+            ngram_range=(1, 2),
+            sublinear_tf=True
         )),
-        ('clf', MultinomialNB())
+        ('clf', LogisticRegression(max_iter=1000, class_weight='balanced'))
     ])
 
 def get_file_pipeline():
-    """Returns the ML pipeline for file name classification."""
+    """
+    Returns a scikit-learn pipeline for file extension classification.
+    """
     return Pipeline([
-        ('tfidf', TfidfVectorizer(analyzer='char', ngram_range=(2, 4))),
-        ('clf', MultinomialNB())
+        ('tfidf', TfidfVectorizer(
+            analyzer='char',
+            ngram_range=(2, 4),
+            max_features=2000
+        )),
+        ('clf', LogisticRegression(max_iter=1000, class_weight='balanced'))
     ])

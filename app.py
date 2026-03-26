@@ -115,7 +115,7 @@ def scan_url():
     
     # Store in database logs
     user_id = session.get('user_id')
-    risk_score = (100 - float(result['score'])) / 100.0
+    risk_score = float(result['score']) / 100.0
     store_scan_log('url', risk_score, result['verdict'], identifier=url, user_id=user_id)
     
     return jsonify(result)
@@ -220,7 +220,7 @@ def scan_file():
     # Store in database logs
     user_id = session.get('user_id')
     try:
-        risk_score = (100 - float(result['score'])) / 100.0
+        risk_score = float(result['score']) / 100.0
         store_scan_log('file', risk_score, result['verdict'], identifier=file_name, user_id=user_id)
     except Exception as e:
         print(f"Database logging error: {e}")

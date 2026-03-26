@@ -243,3 +243,599 @@
 2026-02-25 18:27:09,637 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:27:09] "GET /dashboard HTTP/1.1" 200 -
 2026-02-25 18:27:09,651 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:27:09] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
 2026-02-25 18:27:09,653 - werkzeug - INFO - 127.0.0.1 - - [25/Feb/2026 18:27:09] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 08:53:45,088 - PhishingDetector - INFO - Analyzing email content...
+2026-03-26 08:53:45,112 - PhishingDetector - INFO - Sender domain amazon.in is in trusted whitelist.
+2026-03-26 08:54:05,395 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 08:54:05,395 - PhishingDetector - INFO - Analyzing email content...
+2026-03-26 08:54:05,395 - PhishingDetector - INFO - Sender domain amazon.in is in trusted whitelist.
+2026-03-26 08:54:05,395 - PhishingDetector - INFO - AI Prediction: legitimate (Confidence: 36.9%)
+2026-03-26 08:54:05,395 - PhishingDetector - INFO - Email Analysis Complete. Verdict: Safe, Score: 100, EDS: 0.00
+2026-03-26 08:54:05,395 - PhishingDetector - INFO - Analyzing email content...
+2026-03-26 08:54:05,395 - PhishingDetector - INFO - AI Prediction: legitimate (Confidence: 39.1%)
+2026-03-26 08:54:05,395 - PhishingDetector - INFO - Email Analysis Complete. Verdict: Safe, Score: 100, EDS: 0.00
+2026-03-26 08:54:05,395 - PhishingDetector - INFO - Analyzing email content...
+2026-03-26 08:54:05,403 - PhishingDetector - INFO - AI Prediction: phishing (Confidence: 34.4%)
+2026-03-26 08:54:05,403 - PhishingDetector - INFO - Analyzing URL: http://paypa1-secure-portal.com/verify
+2026-03-26 08:54:05,404 - PhishingDetector - INFO - URL Analysis Complete. Verdict: High Risk, Score: 10
+2026-03-26 08:54:05,404 - PhishingDetector - INFO - Email Analysis Complete. Verdict: Suspicious, Score: 32.8041476690765, EDS: 0.18
+2026-03-26 08:54:05,404 - PhishingDetector - INFO - Analyzing email content...
+2026-03-26 08:54:05,405 - PhishingDetector - INFO - AI Prediction: suspicious (Confidence: 33.7%)
+2026-03-26 08:54:05,405 - PhishingDetector - INFO - Analyzing URL: http://bit.ly/random-link
+2026-03-26 08:54:05,406 - PhishingDetector - INFO - URL Analysis Complete. Verdict: Likely Safe, Score: 80
+2026-03-26 08:54:05,406 - PhishingDetector - INFO - Email Analysis Complete. Verdict: Unknown, Score: 66.56376442473133, EDS: 0.00
+2026-03-26 08:54:05,406 - PhishingDetector - INFO - Analyzing URL: https://www.google.com/search?q=phishing
+2026-03-26 08:54:05,408 - PhishingDetector - INFO - Domain google.com is in trusted whitelist.
+2026-03-26 08:54:36,677 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 08:54:36,678 - PhishingDetector - INFO - Analyzing email content...
+2026-03-26 08:54:36,678 - PhishingDetector - INFO - Sender domain amazon.in is in trusted whitelist.
+2026-03-26 08:54:36,681 - PhishingDetector - INFO - AI Prediction: legitimate (Confidence: 36.9%)
+2026-03-26 08:54:36,681 - PhishingDetector - INFO - Email Analysis Complete. Verdict: Safe, Score: 100, EDS: 0.00
+2026-03-26 08:54:36,681 - PhishingDetector - INFO - Analyzing email content...
+2026-03-26 08:54:36,683 - PhishingDetector - INFO - AI Prediction: legitimate (Confidence: 39.1%)
+2026-03-26 08:54:36,684 - PhishingDetector - INFO - Email Analysis Complete. Verdict: Safe, Score: 100, EDS: 0.00
+2026-03-26 08:54:36,684 - PhishingDetector - INFO - Analyzing email content...
+2026-03-26 08:54:36,685 - PhishingDetector - INFO - AI Prediction: phishing (Confidence: 34.4%)
+2026-03-26 08:54:36,686 - PhishingDetector - INFO - Analyzing URL: http://paypa1-secure-portal.com/verify
+2026-03-26 08:54:36,686 - PhishingDetector - INFO - URL Analysis Complete. Verdict: High Risk, Score: 10
+2026-03-26 08:54:36,686 - PhishingDetector - INFO - Email Analysis Complete. Verdict: Suspicious, Score: 32.8041476690765, EDS: 0.18
+2026-03-26 08:54:36,688 - PhishingDetector - INFO - Analyzing email content...
+2026-03-26 08:54:36,690 - PhishingDetector - INFO - AI Prediction: suspicious (Confidence: 33.7%)
+2026-03-26 08:54:36,690 - PhishingDetector - INFO - Analyzing URL: http://bit.ly/random-link
+2026-03-26 08:54:36,690 - PhishingDetector - INFO - URL Analysis Complete. Verdict: Likely Safe, Score: 80
+2026-03-26 08:54:36,691 - PhishingDetector - INFO - Email Analysis Complete. Verdict: Unknown, Score: 66.56376442473133, EDS: 0.00
+2026-03-26 08:54:36,691 - PhishingDetector - INFO - Analyzing URL: https://www.google.com/search?q=phishing
+2026-03-26 08:54:36,691 - PhishingDetector - INFO - Domain google.com is in trusted whitelist.
+2026-03-26 08:54:46,791 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 08:54:46,792 - PhishingDetector - INFO - Analyzing email content...
+2026-03-26 08:54:46,792 - PhishingDetector - INFO - Sender domain amazon.in is in trusted whitelist.
+2026-03-26 08:54:46,793 - PhishingDetector - INFO - AI Prediction: legitimate (Confidence: 36.9%)
+2026-03-26 08:54:46,793 - PhishingDetector - INFO - Email Analysis Complete. Verdict: Safe, Score: 100, EDS: 0.00
+2026-03-26 08:54:46,793 - PhishingDetector - INFO - Analyzing email content...
+2026-03-26 08:54:46,793 - PhishingDetector - INFO - AI Prediction: legitimate (Confidence: 39.1%)
+2026-03-26 08:54:46,797 - PhishingDetector - INFO - Email Analysis Complete. Verdict: Safe, Score: 100, EDS: 0.00
+2026-03-26 08:54:46,797 - PhishingDetector - INFO - Analyzing email content...
+2026-03-26 08:54:46,798 - PhishingDetector - INFO - AI Prediction: phishing (Confidence: 34.4%)
+2026-03-26 08:54:46,798 - PhishingDetector - INFO - Analyzing URL: http://paypa1-secure-portal.com/verify
+2026-03-26 08:54:46,799 - PhishingDetector - INFO - URL Analysis Complete. Verdict: High Risk, Score: 10
+2026-03-26 08:54:46,799 - PhishingDetector - INFO - Email Analysis Complete. Verdict: Suspicious, Score: 32.8041476690765, EDS: 0.18
+2026-03-26 08:54:46,799 - PhishingDetector - INFO - Analyzing email content...
+2026-03-26 08:54:46,800 - PhishingDetector - INFO - AI Prediction: suspicious (Confidence: 33.7%)
+2026-03-26 08:54:46,800 - PhishingDetector - INFO - Analyzing URL: http://bit.ly/random-link
+2026-03-26 08:54:46,800 - PhishingDetector - INFO - URL Analysis Complete. Verdict: Likely Safe, Score: 80
+2026-03-26 08:54:46,800 - PhishingDetector - INFO - Email Analysis Complete. Verdict: Unknown, Score: 66.56376442473133, EDS: 0.00
+2026-03-26 08:54:46,801 - PhishingDetector - INFO - Analyzing URL: https://www.google.com/search?q=phishing
+2026-03-26 08:54:46,801 - PhishingDetector - INFO - Domain google.com is in trusted whitelist.
+2026-03-26 08:54:54,493 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 08:54:54,493 - PhishingDetector - INFO - Analyzing email content...
+2026-03-26 08:54:54,493 - PhishingDetector - INFO - Sender domain amazon.in is in trusted whitelist.
+2026-03-26 08:54:54,498 - PhishingDetector - INFO - AI Prediction: legitimate (Confidence: 36.9%)
+2026-03-26 08:54:54,498 - PhishingDetector - INFO - Email Analysis Complete. Verdict: Safe, Score: 100, EDS: 0.00
+2026-03-26 08:54:54,499 - PhishingDetector - INFO - Analyzing email content...
+2026-03-26 08:54:54,499 - PhishingDetector - INFO - AI Prediction: legitimate (Confidence: 39.1%)
+2026-03-26 08:54:54,500 - PhishingDetector - INFO - Email Analysis Complete. Verdict: Safe, Score: 100, EDS: 0.00
+2026-03-26 08:54:54,500 - PhishingDetector - INFO - Analyzing email content...
+2026-03-26 08:54:54,501 - PhishingDetector - INFO - AI Prediction: phishing (Confidence: 34.4%)
+2026-03-26 08:54:54,501 - PhishingDetector - INFO - Analyzing URL: http://paypa1-secure-portal.com/verify
+2026-03-26 08:54:54,501 - PhishingDetector - INFO - URL Analysis Complete. Verdict: High Risk, Score: 10
+2026-03-26 08:54:54,501 - PhishingDetector - INFO - Email Analysis Complete. Verdict: Suspicious, Score: 32.8041476690765, EDS: 0.18
+2026-03-26 08:54:54,502 - PhishingDetector - INFO - Analyzing email content...
+2026-03-26 08:54:54,502 - PhishingDetector - INFO - AI Prediction: suspicious (Confidence: 33.7%)
+2026-03-26 08:54:54,504 - PhishingDetector - INFO - Analyzing URL: http://bit.ly/random-link
+2026-03-26 08:54:54,504 - PhishingDetector - INFO - URL Analysis Complete. Verdict: Likely Safe, Score: 80
+2026-03-26 08:54:54,504 - PhishingDetector - INFO - Email Analysis Complete. Verdict: Unknown, Score: 66.56376442473133, EDS: 0.00
+2026-03-26 08:54:54,504 - PhishingDetector - INFO - Analyzing URL: https://www.google.com/search?q=phishing
+2026-03-26 08:54:54,504 - PhishingDetector - INFO - Domain google.com is in trusted whitelist.
+2026-03-26 08:55:11,893 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 08:55:11,893 - PhishingDetector - INFO - Analyzing email content...
+2026-03-26 08:55:11,893 - PhishingDetector - INFO - Sender domain amazon.in is in trusted whitelist.
+2026-03-26 08:55:11,897 - PhishingDetector - INFO - AI Prediction: legitimate (Confidence: 36.9%)
+2026-03-26 08:55:11,897 - PhishingDetector - INFO - Email Analysis Complete. Verdict: Safe, Score: 100, EDS: 0.00
+2026-03-26 08:55:11,897 - PhishingDetector - INFO - Analyzing email content...
+2026-03-26 08:55:11,898 - PhishingDetector - INFO - AI Prediction: legitimate (Confidence: 39.1%)
+2026-03-26 08:55:11,899 - PhishingDetector - INFO - Email Analysis Complete. Verdict: Safe, Score: 100, EDS: 0.00
+2026-03-26 08:55:11,899 - PhishingDetector - INFO - Analyzing email content...
+2026-03-26 08:55:11,900 - PhishingDetector - INFO - AI Prediction: phishing (Confidence: 34.4%)
+2026-03-26 08:55:11,900 - PhishingDetector - INFO - Analyzing URL: http://paypa1-secure-portal.com/verify
+2026-03-26 08:55:11,902 - PhishingDetector - INFO - URL Analysis Complete. Verdict: High Risk, Score: 10
+2026-03-26 08:55:11,902 - PhishingDetector - INFO - Email Analysis Complete. Verdict: Suspicious, Score: 32.8041476690765, EDS: 0.18
+2026-03-26 08:55:11,902 - PhishingDetector - INFO - Analyzing email content...
+2026-03-26 08:55:11,903 - PhishingDetector - INFO - AI Prediction: suspicious (Confidence: 33.7%)
+2026-03-26 08:55:11,903 - PhishingDetector - INFO - Analyzing URL: http://bit.ly/random-link
+2026-03-26 08:55:11,903 - PhishingDetector - INFO - URL Analysis Complete. Verdict: Likely Safe, Score: 80
+2026-03-26 08:55:11,903 - PhishingDetector - INFO - Email Analysis Complete. Verdict: Unknown, Score: 66.56376442473133, EDS: 0.00
+2026-03-26 08:55:11,904 - PhishingDetector - INFO - Analyzing URL: https://www.google.com/search?q=phishing
+2026-03-26 08:55:11,904 - PhishingDetector - INFO - Domain google.com is in trusted whitelist.
+2026-03-26 08:57:17,683 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 08:57:17,811 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-26 08:57:17,812 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-26 08:57:17,812 - werkzeug - INFO -  * Restarting with stat
+2026-03-26 08:57:18,615 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 08:57:18,684 - werkzeug - WARNING -  * Debugger is active!
+2026-03-26 08:57:18,686 - werkzeug - INFO -  * Debugger PIN: 175-368-269
+2026-03-26 08:57:25,608 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 08:57:25] "GET / HTTP/1.1" 200 -
+2026-03-26 08:57:25,692 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 08:57:25] "GET /static/css/styles.css HTTP/1.1" 200 -
+2026-03-26 08:57:25,694 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 08:57:25] "GET /static/js/scripts.js HTTP/1.1" 200 -
+2026-03-26 08:57:26,603 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 08:57:26] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-26 08:57:29,889 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 08:57:29] "GET /what-is-phishing HTTP/1.1" 200 -
+2026-03-26 08:57:29,912 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 08:57:29] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 08:57:29,915 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 08:57:29] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 08:57:42,595 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 08:57:42] "GET /about HTTP/1.1" 200 -
+2026-03-26 08:57:42,618 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 08:57:42] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 08:57:42,618 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 08:57:42] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 08:57:43,860 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 08:57:43] "GET /feedback HTTP/1.1" 200 -
+2026-03-26 08:57:43,884 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 08:57:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 08:57:43,886 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 08:57:43] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 08:57:45,314 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 08:57:45] "GET /login HTTP/1.1" 200 -
+2026-03-26 08:57:45,334 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 08:57:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 08:57:45,335 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 08:57:45] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 08:57:46,589 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 08:57:46] "GET / HTTP/1.1" 200 -
+2026-03-26 08:57:46,612 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 08:57:46] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 08:57:46,614 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 08:57:46] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 08:57:51,758 - PhishingDetector - INFO - URL Analysis Complete. Verdict: High Risk, Score: 5
+2026-03-26 08:57:51,773 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 08:57:51] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 08:58:56,497 - PhishingDetector - INFO - Analyzing URL: https://sites.google.com/new
+2026-03-26 08:58:56,497 - PhishingDetector - INFO - Domain sites.google.com is in trusted whitelist.
+2026-03-26 08:58:56,507 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 08:58:56] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 08:59:22,848 - PhishingDetector - INFO - Analyzing URL: https://chatgpt.com/c/698b0838-d7fc-8323-9ca4-49ba0189d507
+2026-03-26 08:59:22,848 - PhishingDetector - INFO - Domain chatgpt.com is in trusted whitelist.
+2026-03-26 08:59:22,868 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 08:59:22] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:01:10,712 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:01:10] "GET / HTTP/1.1" 200 -
+2026-03-26 09:01:10,737 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:01:10] "GET /static/css/styles.css HTTP/1.1" 200 -
+2026-03-26 09:01:10,741 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:01:10] "GET /static/js/scripts.js HTTP/1.1" 200 -
+2026-03-26 09:01:22,449 - PhishingDetector - INFO - Analyzing URL: https://chatgpt.com/c/698b0838-d7fc-8323-9ca4-49ba0189d507
+2026-03-26 09:01:22,449 - PhishingDetector - INFO - Domain chatgpt.com is in trusted whitelist.
+2026-03-26 09:01:22,458 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:01:22] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:01:34,937 - PhishingDetector - INFO - Analyzing URL: https://sites.google.com/new
+2026-03-26 09:01:34,937 - PhishingDetector - INFO - Domain sites.google.com is in trusted whitelist.
+2026-03-26 09:01:34,959 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:01:34] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:01:49,590 - PhishingDetector - INFO - Analyzing URL: https://chatgpt.com/c/698b0838-d7fc-8323-9ca4-49ba0189d507
+2026-03-26 09:01:49,591 - PhishingDetector - INFO - Domain chatgpt.com is in trusted whitelist.
+2026-03-26 09:01:49,613 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:01:49] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:03:31,791 - PhishingDetector - INFO - Analyzing URL: https://globalfishingwatch.org/our-apis/documentation#introduction
+2026-03-26 09:03:31,792 - PhishingDetector - INFO - URL Analysis Complete. Verdict: Safe, Score: 100
+2026-03-26 09:03:31,801 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:03:31] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:03:46,866 - PhishingDetector - INFO - Analyzing URL: http://127.0.0.1:5000/
+2026-03-26 09:03:46,867 - PhishingDetector - INFO - URL Analysis Complete. Verdict: Suspicious, Score: 40
+2026-03-26 09:03:46,873 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:03:46] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:05:06,570 - PhishingDetector - INFO - Analyzing URL: http://dummy-bank-alert.org/update-info
+2026-03-26 09:05:06,571 - PhishingDetector - INFO - URL Analysis Complete. Verdict: Unknown, Score: 60
+2026-03-26 09:05:06,583 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:05:06] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:06:16,317 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:06:16] "GET / HTTP/1.1" 200 -
+2026-03-26 09:06:16,336 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:06:16] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 09:06:16,340 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:06:16] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 09:06:16,651 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:06:16] "GET / HTTP/1.1" 200 -
+2026-03-26 09:06:16,671 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:06:16] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 09:06:16,673 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:06:16] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 09:06:28,104 - PhishingDetector - INFO - Analyzing URL: http://amazon.account-security-update-required.net/verify
+2026-03-26 09:06:28,104 - PhishingDetector - INFO - URL Analysis Complete. Verdict: Unknown, Score: 60
+2026-03-26 09:06:28,112 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:06:28] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:06:45,639 - PhishingDetector - INFO - Analyzing URL: http://bankofindia.secure-authenticate-user.com/update
+2026-03-26 09:06:45,639 - PhishingDetector - INFO - URL Analysis Complete. Verdict: Unknown, Score: 60
+2026-03-26 09:06:45,646 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:06:45] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:13:57,888 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\detector.py', reloading
+2026-03-26 09:13:58,033 - werkzeug - INFO -  * Restarting with stat
+2026-03-26 09:13:58,954 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 09:13:59,036 - werkzeug - WARNING -  * Debugger is active!
+2026-03-26 09:13:59,038 - werkzeug - INFO -  * Debugger PIN: 175-368-269
+2026-03-26 09:14:58,641 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\detector.py', reloading
+2026-03-26 09:14:58,816 - werkzeug - INFO -  * Restarting with stat
+2026-03-26 09:14:59,822 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 09:14:59,878 - werkzeug - WARNING -  * Debugger is active!
+2026-03-26 09:14:59,881 - werkzeug - INFO -  * Debugger PIN: 175-368-269
+2026-03-26 09:15:09,996 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\ml_logic.py', reloading
+2026-03-26 09:15:10,167 - werkzeug - INFO -  * Restarting with stat
+2026-03-26 09:15:11,239 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 09:15:11,319 - werkzeug - WARNING -  * Debugger is active!
+2026-03-26 09:15:11,321 - werkzeug - INFO -  * Debugger PIN: 175-368-269
+2026-03-26 09:15:33,555 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\ml_logic.py', reloading
+2026-03-26 09:15:33,688 - werkzeug - INFO -  * Restarting with stat
+2026-03-26 09:15:34,554 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 09:15:34,614 - werkzeug - WARNING -  * Debugger is active!
+2026-03-26 09:15:34,616 - werkzeug - INFO -  * Debugger PIN: 175-368-269
+2026-03-26 09:15:57,863 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\ml_logic.py', reloading
+2026-03-26 09:15:58,019 - werkzeug - INFO -  * Restarting with stat
+2026-03-26 09:15:58,944 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 09:15:59,006 - werkzeug - WARNING -  * Debugger is active!
+2026-03-26 09:15:59,008 - werkzeug - INFO -  * Debugger PIN: 175-368-269
+2026-03-26 09:16:35,626 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:16:35] "GET / HTTP/1.1" 200 -
+2026-03-26 09:16:35,732 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:16:35] "GET /static/css/styles.css HTTP/1.1" 200 -
+2026-03-26 09:16:35,733 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:16:35] "GET /static/js/scripts.js HTTP/1.1" 200 -
+2026-03-26 09:16:43,500 - PhishingDetector - INFO - Analyzing URL: https://chatgpt.com/c/698b0838-d7fc-8323-9ca4-49ba0189d507
+2026-03-26 09:16:43,500 - PhishingDetector - INFO - Domain chatgpt.com is in trusted whitelist.
+2026-03-26 09:16:43,526 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:16:43] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:17:14,460 - PhishingDetector - INFO - Analyzing URL: http://127.0.0.1:5000/
+2026-03-26 09:17:14,460 - PhishingDetector - INFO - URL Analysis Complete. Verdict: Suspicious, Score: 40
+2026-03-26 09:17:14,473 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:17:14] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:17:50,309 - PhishingDetector - INFO - Analyzing URL: https://temp-mail.org/en/
+2026-03-26 09:17:50,309 - PhishingDetector - INFO - URL Analysis Complete. Verdict: Safe, Score: 100
+2026-03-26 09:17:50,338 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:17:50] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:18:12,882 - PhishingDetector - INFO - Analyzing URL: https://temp-mail.io/en
+2026-03-26 09:18:12,883 - PhishingDetector - INFO - URL Analysis Complete. Verdict: Safe, Score: 100
+2026-03-26 09:18:12,904 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:18:12] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:18:37,510 - PhishingDetector - INFO - Analyzing URL: https://modextra.com/
+2026-03-26 09:18:37,510 - PhishingDetector - INFO - URL Analysis Complete. Verdict: Safe, Score: 100
+2026-03-26 09:18:37,521 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:18:37] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:18:54,168 - PhishingDetector - INFO - Analyzing URL: https://happymod.pro/
+2026-03-26 09:18:54,168 - PhishingDetector - INFO - URL Analysis Complete. Verdict: Safe, Score: 100
+2026-03-26 09:18:54,195 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:18:54] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:24:31,125 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\ml_logic.py', reloading
+2026-03-26 09:24:31,284 - werkzeug - INFO -  * Restarting with stat
+2026-03-26 09:24:32,268 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 09:24:32,356 - werkzeug - WARNING -  * Debugger is active!
+2026-03-26 09:24:32,360 - werkzeug - INFO -  * Debugger PIN: 175-368-269
+2026-03-26 09:25:32,968 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\detector.py', reloading
+2026-03-26 09:25:33,093 - werkzeug - INFO -  * Restarting with stat
+2026-03-26 09:25:34,035 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 09:25:34,111 - werkzeug - WARNING -  * Debugger is active!
+2026-03-26 09:25:34,114 - werkzeug - INFO -  * Debugger PIN: 175-368-269
+2026-03-26 09:26:48,957 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 09:26:48,957 - PhishingDetector - INFO - Analyzing URL: https://www.google.com
+2026-03-26 09:26:48,957 - PhishingDetector - INFO - URL Analysis: https://www.google.com -> Score: 0, Verdict: Safe
+2026-03-26 09:26:48,960 - PhishingDetector - INFO - Analyzing URL: http://insecure-site.com
+2026-03-26 09:26:48,960 - PhishingDetector - INFO - URL Analysis: http://insecure-site.com -> Score: 20.0, Verdict: Safe
+2026-03-26 09:26:48,960 - PhishingDetector - INFO - Analyzing URL: https://paypa1-update.security.com
+2026-03-26 09:26:48,960 - PhishingDetector - INFO - URL Analysis: https://paypa1-update.security.com -> Score: 60.0, Verdict: Suspicious
+2026-03-26 09:26:48,960 - PhishingDetector - INFO - Analyzing URL: https://192.168.1.1/login
+2026-03-26 09:26:48,960 - PhishingDetector - INFO - URL Analysis: https://192.168.1.1/login -> Score: 45.0, Verdict: Likely Safe
+2026-03-26 09:26:48,960 - PhishingDetector - INFO - Analyzing URL: https://new-startup-blog.io
+2026-03-26 09:26:48,960 - PhishingDetector - INFO - URL Analysis: https://new-startup-blog.io -> Score: 0, Verdict: Safe
+2026-03-26 09:27:32,100 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:27:32] "GET / HTTP/1.1" 200 -
+2026-03-26 09:27:32,174 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:27:32] "GET /static/js/scripts.js HTTP/1.1" 200 -
+2026-03-26 09:27:32,175 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:27:32] "GET /static/css/styles.css HTTP/1.1" 200 -
+2026-03-26 09:27:32,584 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:27:32] "GET / HTTP/1.1" 200 -
+2026-03-26 09:27:32,603 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:27:32] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 09:27:32,605 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:27:32] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 09:27:36,747 - PhishingDetector - INFO - Analyzing URL: https://modextra.com/
+2026-03-26 09:27:36,747 - PhishingDetector - INFO - URL Analysis: https://modextra.com/ -> Score: 0, Verdict: Safe
+2026-03-26 09:27:36,782 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:27:36] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:28:14,846 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 09:28:14,846 - PhishingDetector - INFO - Analyzing URL: https://modextra.com/
+2026-03-26 09:28:14,848 - PhishingDetector - INFO - URL Analysis: https://modextra.com/ -> Score: 0, Verdict: Safe
+2026-03-26 09:29:23,134 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\detector.py', reloading
+2026-03-26 09:29:23,306 - werkzeug - INFO -  * Restarting with stat
+2026-03-26 09:30:07,503 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 09:30:07,504 - PhishingDetector - INFO - Analyzing URL: https://modextra.com/
+2026-03-26 09:30:27,009 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 09:30:27,009 - PhishingDetector - INFO - Analyzing URL: https://modextra.com/
+2026-03-26 09:33:01,489 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 09:33:01,570 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-26 09:33:01,571 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-26 09:33:01,572 - werkzeug - INFO -  * Restarting with stat
+2026-03-26 09:33:02,427 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 09:33:02,489 - werkzeug - WARNING -  * Debugger is active!
+2026-03-26 09:33:02,491 - werkzeug - INFO -  * Debugger PIN: 175-368-269
+2026-03-26 09:33:36,623 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:33:36] "GET / HTTP/1.1" 200 -
+2026-03-26 09:33:36,704 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:33:36] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 09:33:36,704 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:33:36] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 09:33:42,001 - PhishingDetector - INFO - Analyzing URL: https://modextra.com/
+2026-03-26 09:33:42,025 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:33:42] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:34:17,738 - PhishingDetector - INFO - Analyzing URL: https://apkpure.net/game
+2026-03-26 09:34:17,754 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:34:17] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:34:57,778 - PhishingDetector - INFO - Analyzing URL: https://nordvpn.com/link-checker/?srsltid=AfmBOors-dABO0fviSwANTFL20uf9eUvPed1L1Wo-uqIhD1GLYVy2tI9
+2026-03-26 09:34:57,799 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:34:57] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:35:20,736 - PhishingDetector - INFO - Analyzing URL: https://nordvpn.com/link-checker/?srsltid=AfmBOooNn3lJeE2WIMy89EJ_U32EcI0bh0UG68vU7Bt8OsnzZkD2ywAO
+2026-03-26 09:35:20,746 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:35:20] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:35:27,839 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:35:27] "GET / HTTP/1.1" 200 -
+2026-03-26 09:35:27,861 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:35:27] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 09:35:27,863 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:35:27] "GET /static/js/scripts.js HTTP/1.1" 200 -
+2026-03-26 09:35:33,172 - PhishingDetector - INFO - Analyzing URL: https://nordvpn.com/link-checker/?srsltid=AfmBOooNn3lJeE2WIMy89EJ_U32EcI0bh0UG68vU7Bt8OsnzZkD2ywAO
+2026-03-26 09:35:33,186 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:35:33] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:35:47,545 - PhishingDetector - INFO - Analyzing URL: https://www.ipvanish.com/link-checker/
+2026-03-26 09:35:47,566 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:35:47] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:36:09,340 - PhishingDetector - INFO - Analyzing URL: http://facebook.security-check-session-alert.com/login
+2026-03-26 09:36:09,365 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:36:09] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:36:38,815 - PhishingDetector - INFO - Analyzing URL: http://google.support-account-recovery-alert.net/signin
+2026-03-26 09:36:38,842 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:36:38] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:39:06,858 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\detector.py', reloading
+2026-03-26 09:39:07,003 - werkzeug - INFO -  * Restarting with stat
+2026-03-26 09:39:07,962 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 09:39:08,030 - werkzeug - WARNING -  * Debugger is active!
+2026-03-26 09:39:08,033 - werkzeug - INFO -  * Debugger PIN: 175-368-269
+2026-03-26 09:42:49,194 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\detector.py', reloading
+2026-03-26 09:42:49,336 - werkzeug - INFO -  * Restarting with stat
+2026-03-26 09:42:50,173 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 09:42:50,245 - werkzeug - WARNING -  * Debugger is active!
+2026-03-26 09:42:50,247 - werkzeug - INFO -  * Debugger PIN: 175-368-269
+2026-03-26 09:43:01,764 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 09:43:13,084 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:43:13] "GET / HTTP/1.1" 200 -
+2026-03-26 09:43:13,170 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:43:13] "GET /static/css/styles.css HTTP/1.1" 200 -
+2026-03-26 09:43:13,171 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:43:13] "GET /static/js/scripts.js HTTP/1.1" 200 -
+2026-03-26 09:43:46,789 - PhishingDetector - INFO - Analyzing URL: https://chatgpt.com/c/69c4a935-5654-8321-ab48-49b845bd75e9
+2026-03-26 09:43:46,810 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:43:46] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:45:19,609 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:45:19] "GET / HTTP/1.1" 200 -
+2026-03-26 09:45:19,628 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:45:19] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 09:45:19,629 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:45:19] "GET /static/js/scripts.js HTTP/1.1" 200 -
+2026-03-26 09:45:25,019 - PhishingDetector - INFO - Analyzing URL: https://chatgpt.com/c/69c4a935-5654-8321-ab48-49b845bd75e9
+2026-03-26 09:45:25,046 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:45:25] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:47:24,816 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:47:24] "GET / HTTP/1.1" 200 -
+2026-03-26 09:47:24,845 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:47:24] "GET /static/css/styles.css HTTP/1.1" 200 -
+2026-03-26 09:47:24,849 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:47:24] "GET /static/js/scripts.js HTTP/1.1" 200 -
+2026-03-26 09:47:25,639 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:47:25] "GET / HTTP/1.1" 200 -
+2026-03-26 09:47:25,675 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:47:25] "GET /static/js/scripts.js HTTP/1.1" 200 -
+2026-03-26 09:47:25,681 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:47:25] "GET /static/css/styles.css HTTP/1.1" 200 -
+2026-03-26 09:47:26,046 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:47:26] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-26 09:47:29,752 - PhishingDetector - INFO - Analyzing URL: https://chatgpt.com/c/69c4a935-5654-8321-ab48-49b845bd75e9
+2026-03-26 09:47:29,775 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:47:29] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:47:45,793 - PhishingDetector - INFO - Analyzing URL: https://modextra.com
+2026-03-26 09:47:45,807 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:47:45] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:47:58,287 - PhishingDetector - INFO - Analyzing URL: https://chatgpt.com/c/69c4a935-5654-8321-ab48-49b845bd75e9
+2026-03-26 09:47:58,317 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:47:58] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:48:22,818 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\detector.py', reloading
+2026-03-26 09:48:22,981 - werkzeug - INFO -  * Restarting with stat
+2026-03-26 09:48:23,907 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 09:48:23,976 - werkzeug - WARNING -  * Debugger is active!
+2026-03-26 09:48:23,976 - werkzeug - INFO -  * Debugger PIN: 175-368-269
+2026-03-26 09:49:04,139 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:49:04] "GET / HTTP/1.1" 200 -
+2026-03-26 09:49:04,214 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:49:04] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 09:49:04,214 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:49:04] "GET /static/js/scripts.js HTTP/1.1" 200 -
+2026-03-26 09:49:39,649 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:49:39] "GET / HTTP/1.1" 200 -
+2026-03-26 09:49:39,682 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:49:39] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 09:49:39,688 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:49:39] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 09:49:39,794 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:49:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-26 09:51:37,168 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\detector.py', reloading
+2026-03-26 09:51:37,304 - werkzeug - INFO -  * Restarting with stat
+2026-03-26 09:51:38,148 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 09:51:38,214 - werkzeug - WARNING -  * Debugger is active!
+2026-03-26 09:51:38,216 - werkzeug - INFO -  * Debugger PIN: 175-368-269
+2026-03-26 09:52:22,212 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:52:22] "GET / HTTP/1.1" 200 -
+2026-03-26 09:52:22,308 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:52:22] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 09:52:22,322 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:52:22] "GET /static/js/scripts.js HTTP/1.1" 200 -
+2026-03-26 09:52:32,840 - PhishingDetector - INFO - Analyzing URL: https://nordvpn.com/link-checker/?srsltid=AfmBOooNn3lJeE2WIMy89EJ_U32EcI0bh0UG68vU7Bt8OsnzZkD2ywAO
+2026-03-26 09:52:32,871 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:52:32] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:52:39,766 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:52:39] "GET / HTTP/1.1" 200 -
+2026-03-26 09:52:39,800 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:52:39] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 09:52:39,804 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:52:39] "GET /static/js/scripts.js HTTP/1.1" 200 -
+2026-03-26 09:52:40,301 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:52:40] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-26 09:52:50,268 - PhishingDetector - INFO - Analyzing URL: https://apkpure.net/game
+2026-03-26 09:52:50,292 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:52:50] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:52:57,380 - PhishingDetector - INFO - Analyzing URL: https://www.google.com
+2026-03-26 09:52:57,406 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:52:57] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:53:20,996 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:53:20] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:53:45,581 - PhishingDetector - INFO - Analyzing URL: http://google.support-account-recovery-alert.net/signin
+2026-03-26 09:53:45,605 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:53:45] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:54:59,442 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:54:59] "GET / HTTP/1.1" 200 -
+2026-03-26 09:54:59,461 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:54:59] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 09:54:59,464 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:54:59] "GET /static/js/scripts.js HTTP/1.1" 200 -
+2026-03-26 09:55:06,373 - PhishingDetector - INFO - Analyzing URL: http://google.support-account-recovery-alert.net/signin
+2026-03-26 09:55:06,394 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:55:06] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:55:25,621 - PhishingDetector - INFO - Analyzing URL: https://chatgpt.com/c/69c4a935-5654-8321-ab48-49b845bd75e9
+2026-03-26 09:55:25,642 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:55:25] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:55:37,786 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:55:37] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:55:40,232 - PhishingDetector - INFO - Analyzing URL: https://apkpure.net/game
+2026-03-26 09:55:40,245 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:55:40] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:55:50,729 - PhishingDetector - INFO - Analyzing URL: https://chatgpt.com/c/69c4a935-5654-8321-ab48-49b845bd75e9
+2026-03-26 09:55:50,773 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:55:50] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:56:06,963 - PhishingDetector - INFO - Analyzing URL: http://google.support-account-recovery-alert.net/signin
+2026-03-26 09:56:06,973 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:56:06] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:57:34,649 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:57:34] "GET / HTTP/1.1" 200 -
+2026-03-26 09:57:34,667 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:57:34] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 09:57:34,669 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:57:34] "GET /static/js/scripts.js HTTP/1.1" 200 -
+2026-03-26 09:57:39,449 - PhishingDetector - INFO - Analyzing URL: http://google.support-account-recovery-alert.net/signin
+2026-03-26 09:57:39,473 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:57:39] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:57:58,774 - PhishingDetector - INFO - Analyzing URL: https://chatgpt.com/c/69c4a935-5654-8321-ab48-49b845bd75e9
+2026-03-26 09:57:58,799 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:57:58] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:58:46,176 - PhishingDetector - INFO - Analyzing URL: http://upi-payment-alert.verify-now-fast.com/secure
+2026-03-26 09:58:46,201 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:58:46] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 09:59:07,762 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 09:59:07,834 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-26 09:59:07,834 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-26 09:59:07,837 - werkzeug - INFO -  * Restarting with stat
+2026-03-26 09:59:08,683 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 09:59:08,772 - werkzeug - WARNING -  * Debugger is active!
+2026-03-26 09:59:08,773 - werkzeug - INFO -  * Debugger PIN: 175-368-269
+2026-03-26 09:59:29,820 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:59:29] "GET / HTTP/1.1" 200 -
+2026-03-26 09:59:29,844 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:59:29] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 09:59:29,851 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:59:29] "GET /static/js/scripts.js HTTP/1.1" 200 -
+2026-03-26 09:59:30,174 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:59:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-26 09:59:49,001 - PhishingDetector - INFO - Analyzing URL: https://www.google.com
+2026-03-26 09:59:49,029 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 09:59:49] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 10:00:09,662 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:00:09] "GET / HTTP/1.1" 200 -
+2026-03-26 10:00:09,684 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:00:09] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:00:09,686 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:00:09] "GET /static/js/scripts.js HTTP/1.1" 200 -
+2026-03-26 10:00:13,419 - PhishingDetector - INFO - Analyzing URL: http://upi-payment-alert.verify-now-fast.com/secure
+2026-03-26 10:00:13,443 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:00:13] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 10:03:25,395 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:03:25] "GET / HTTP/1.1" 200 -
+2026-03-26 10:03:25,417 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:03:25] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:03:25,419 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:03:25] "GET /static/js/scripts.js HTTP/1.1" 200 -
+2026-03-26 10:03:30,407 - PhishingDetector - INFO - Analyzing URL: http://upi-payment-alert.verify-now-fast.com/secure
+2026-03-26 10:03:30,427 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:03:30] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 10:03:42,538 - PhishingDetector - INFO - Analyzing URL: https://apkpure.net/game
+2026-03-26 10:03:42,573 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:03:42] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 10:04:43,343 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:04:43] "GET / HTTP/1.1" 200 -
+2026-03-26 10:04:43,361 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:04:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:04:43,362 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:04:43] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:04:45,065 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:04:45] "GET /login HTTP/1.1" 200 -
+2026-03-26 10:04:45,084 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:04:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:04:45,086 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:04:45] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:04:47,534 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:04:47] "GET /register HTTP/1.1" 200 -
+2026-03-26 10:04:47,551 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:04:47] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:04:47,552 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:04:47] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:04:58,825 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:04:58] "POST /register HTTP/1.1" 200 -
+2026-03-26 10:04:58,843 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:04:58] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:04:58,845 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:04:58] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:05:11,613 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:05:11] "GET /login HTTP/1.1" 200 -
+2026-03-26 10:05:11,636 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:05:11] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:05:11,638 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:05:11] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:05:16,258 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:05:16] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-26 10:05:16,264 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:05:16] "GET / HTTP/1.1" 200 -
+2026-03-26 10:05:16,286 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:05:16] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:05:16,288 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:05:16] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:05:20,019 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:05:20] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-03-26 10:05:20,036 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:05:20] "GET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-03-26 10:05:20,037 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:05:20] "GET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-03-26 10:05:20,071 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:05:20] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=npmSjFwFPYl1sQt6wmRj HTTP/1.1" 200 -
+2026-03-26 10:05:20,094 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:05:20] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-03-26 10:06:22,825 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\database.py', reloading
+2026-03-26 10:06:23,050 - werkzeug - INFO -  * Restarting with stat
+2026-03-26 10:06:23,513 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\database.py', reloading
+2026-03-26 10:06:23,717 - werkzeug - INFO -  * Restarting with stat
+2026-03-26 10:06:24,037 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 10:06:24,105 - werkzeug - WARNING -  * Debugger is active!
+2026-03-26 10:06:24,107 - werkzeug - INFO -  * Debugger PIN: 175-368-269
+2026-03-26 10:06:24,652 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 10:06:24,723 - werkzeug - WARNING -  * Debugger is active!
+2026-03-26 10:06:24,723 - werkzeug - INFO -  * Debugger PIN: 175-368-269
+2026-03-26 10:07:50,030 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:07:50] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2026-03-26 10:07:50,051 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:07:50] "GET /login HTTP/1.1" 200 -
+2026-03-26 10:07:50,144 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:07:50] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:07:50,144 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:07:50] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:07:52,669 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:07:52] "GET /login HTTP/1.1" 200 -
+2026-03-26 10:07:52,692 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:07:52] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:07:52,694 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:07:52] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:07:57,883 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:07:57] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-26 10:07:57,892 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:07:57] "GET / HTTP/1.1" 200 -
+2026-03-26 10:07:57,918 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:07:57] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:07:57,920 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:07:57] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:07:59,200 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:07:59] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-03-26 10:07:59,221 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:07:59] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-26 10:07:59,222 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:07:59] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-26 10:07:59,231 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:07:59] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=9tMhvmCeYoykpbVmDwxp HTTP/1.1" 200 -
+2026-03-26 10:08:01,254 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:08:01] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-03-26 10:08:01,276 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:08:01] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-26 10:08:01,277 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:08:01] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-26 10:08:01,292 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:08:01] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=9tMhvmCeYoykpbVmDwxp HTTP/1.1[0m" 304 -
+2026-03-26 10:08:01,318 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:08:01] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-03-26 10:08:02,036 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:08:02] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-03-26 10:08:02,054 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:08:02] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-26 10:08:02,059 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:08:02] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-26 10:08:02,070 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:08:02] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=9tMhvmCeYoykpbVmDwxp HTTP/1.1[0m" 304 -
+2026-03-26 10:08:02,107 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:08:02] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-03-26 10:08:28,586 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:08:28] "GET / HTTP/1.1" 200 -
+2026-03-26 10:08:28,615 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:08:28] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:08:28,617 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:08:28] "GET /static/js/scripts.js HTTP/1.1" 200 -
+2026-03-26 10:08:28,789 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:08:28] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-26 10:08:59,270 - PhishingDetector - INFO - Analyzing URL: https://www.google.com
+2026-03-26 10:08:59,292 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:08:59] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 10:09:13,226 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:09:13] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2026-03-26 10:09:13,233 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:09:13] "GET /login HTTP/1.1" 200 -
+2026-03-26 10:09:13,260 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:09:13] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:09:13,261 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:09:13] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:09:32,210 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:09:32] "GET /register HTTP/1.1" 200 -
+2026-03-26 10:09:32,238 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:09:32] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:09:32,240 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:09:32] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:09:47,590 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:09:47] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-03-26 10:09:47,595 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:09:47] "GET /login HTTP/1.1" 200 -
+2026-03-26 10:09:47,624 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:09:47] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:09:47,628 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:09:47] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:10:10,362 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:10:10] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-26 10:10:10,381 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:10:10] "GET / HTTP/1.1" 200 -
+2026-03-26 10:10:10,406 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:10:10] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:10:10,409 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:10:10] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:10:28,203 - PhishingDetector - INFO - Analyzing URL: https://www.google.com
+2026-03-26 10:10:28,226 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:10:28] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 10:10:37,674 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:10:37] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-03-26 10:10:37,695 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:10:37] "GET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-03-26 10:10:37,696 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:10:37] "GET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-03-26 10:10:37,723 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:10:37] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=9tMhvmCeYoykpbVmDwxp HTTP/1.1" 200 -
+2026-03-26 10:10:37,736 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:10:37] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-03-26 10:12:28,974 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\database.py', reloading
+2026-03-26 10:12:29,124 - werkzeug - INFO -  * Restarting with stat
+2026-03-26 10:12:29,439 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\database.py', reloading
+2026-03-26 10:12:29,590 - werkzeug - INFO -  * Restarting with stat
+2026-03-26 10:12:30,004 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 10:12:30,062 - werkzeug - WARNING -  * Debugger is active!
+2026-03-26 10:12:30,065 - werkzeug - INFO -  * Debugger PIN: 175-368-269
+2026-03-26 10:12:30,423 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 10:12:30,490 - werkzeug - WARNING -  * Debugger is active!
+2026-03-26 10:12:30,492 - werkzeug - INFO -  * Debugger PIN: 175-368-269
+2026-03-26 10:12:45,900 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:12:45] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2026-03-26 10:12:45,921 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:12:45] "GET /login HTTP/1.1" 200 -
+2026-03-26 10:12:46,007 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:12:46] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:12:46,014 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:12:46] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:12:48,315 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:12:48] "GET / HTTP/1.1" 200 -
+2026-03-26 10:12:48,344 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:12:48] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:12:48,347 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:12:48] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:12:52,353 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:12:52] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-26 10:12:52,359 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:12:52] "GET / HTTP/1.1" 200 -
+2026-03-26 10:12:52,388 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:12:52] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:12:52,394 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:12:52] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:12:54,494 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:12:54] "GET /dashboard HTTP/1.1" 200 -
+2026-03-26 10:12:54,521 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:12:54] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:12:54,526 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:12:54] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:13:04,215 - PhishingDetector - INFO - Analyzing URL: https://www.google.com
+2026-03-26 10:13:04,239 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:13:04] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 10:13:17,440 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:13:17] "GET /login HTTP/1.1" 200 -
+2026-03-26 10:13:17,480 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:13:17] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:13:17,482 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:13:17] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:13:22,833 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:13:22] "GET / HTTP/1.1" 200 -
+2026-03-26 10:13:22,862 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:13:22] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:13:22,865 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:13:22] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:13:24,229 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:13:24] "GET /register HTTP/1.1" 200 -
+2026-03-26 10:13:24,261 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:13:24] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:13:24,267 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:13:24] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:13:35,740 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:13:35] "POST /register HTTP/1.1" 200 -
+2026-03-26 10:13:35,774 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:13:35] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:13:35,775 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:13:35] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:13:39,876 - PhishingDetector - INFO - Analyzing URL: https://apkpure.net/game
+2026-03-26 10:13:39,900 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:13:39] "POST /api/scan/url HTTP/1.1" 200 -
+2026-03-26 10:13:42,364 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:13:42] "GET /dashboard HTTP/1.1" 200 -
+2026-03-26 10:13:42,394 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:13:42] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:13:42,395 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:13:42] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:13:42,579 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:13:42] "GET /login HTTP/1.1" 200 -
+2026-03-26 10:13:42,608 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:13:42] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:13:42,610 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:13:42] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:14:15,288 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:14:15] "GET / HTTP/1.1" 200 -
+2026-03-26 10:14:15,309 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:14:15] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:14:15,314 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:14:15] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:14:52,354 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:14:52] "[35m[1mPOST /api/scan/email HTTP/1.1[0m" 500 -
+2026-03-26 10:14:57,673 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:14:57] "[35m[1mPOST /api/scan/email HTTP/1.1[0m" 500 -
+2026-03-26 10:14:59,004 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:14:59] "[35m[1mPOST /api/scan/email HTTP/1.1[0m" 500 -
+2026-03-26 10:15:30,368 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:15:30] "[35m[1mPOST /api/scan/email-file HTTP/1.1[0m" 500 -
+2026-03-26 10:15:42,548 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:15:42] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-26 10:15:48,871 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\detector.py', reloading
+2026-03-26 10:15:49,075 - werkzeug - INFO -  * Restarting with stat
+2026-03-26 10:15:49,389 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\detector.py', reloading
+2026-03-26 10:15:49,588 - werkzeug - INFO -  * Restarting with stat
+2026-03-26 10:15:49,936 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 10:15:50,003 - werkzeug - WARNING -  * Debugger is active!
+2026-03-26 10:15:50,004 - werkzeug - INFO -  * Debugger PIN: 175-368-269
+2026-03-26 10:15:50,438 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 10:15:50,507 - werkzeug - WARNING -  * Debugger is active!
+2026-03-26 10:15:50,508 - werkzeug - INFO -  * Debugger PIN: 175-368-269
+2026-03-26 10:16:21,992 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:16:21] "GET / HTTP/1.1" 200 -
+2026-03-26 10:16:22,085 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:16:22] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:16:22,085 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:16:22] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:16:22,200 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:16:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-26 10:16:51,745 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:16:51] "[35m[1mPOST /api/scan/email HTTP/1.1[0m" 500 -
+2026-03-26 10:17:19,960 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:17:19] "GET / HTTP/1.1" 200 -
+2026-03-26 10:17:19,994 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:17:19] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:17:19,996 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:17:19] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:17:35,070 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:17:35] "[35m[1mPOST /api/scan/email HTTP/1.1[0m" 500 -
+2026-03-26 10:18:20,277 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:18:20] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2026-03-26 10:18:20,287 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:18:20] "GET /login HTTP/1.1" 200 -
+2026-03-26 10:18:20,320 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:18:20] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:18:20,322 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:18:20] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:19:27,345 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:19:27] "[35m[1mPOST /api/scan/email HTTP/1.1[0m" 500 -
+2026-03-26 10:19:46,811 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\detector.py', reloading
+2026-03-26 10:19:46,953 - werkzeug - INFO -  * Restarting with stat
+2026-03-26 10:19:47,176 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\detector.py', reloading
+2026-03-26 10:19:47,323 - werkzeug - INFO -  * Restarting with stat
+2026-03-26 10:19:47,812 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 10:19:47,877 - werkzeug - WARNING -  * Debugger is active!
+2026-03-26 10:19:47,880 - werkzeug - INFO -  * Debugger PIN: 175-368-269
+2026-03-26 10:19:48,154 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-26 10:19:48,217 - werkzeug - WARNING -  * Debugger is active!
+2026-03-26 10:19:48,219 - werkzeug - INFO -  * Debugger PIN: 175-368-269
+2026-03-26 10:20:15,983 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:20:15] "POST /api/scan/email HTTP/1.1" 200 -
+2026-03-26 10:21:31,977 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:21:31] "POST /api/scan/email HTTP/1.1" 200 -
+2026-03-26 10:21:37,453 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:21:37] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2026-03-26 10:21:37,473 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:21:37] "GET /login HTTP/1.1" 200 -
+2026-03-26 10:21:37,561 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:21:37] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:21:37,563 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:21:37] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:21:42,776 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:21:42] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-26 10:21:42,786 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:21:42] "GET / HTTP/1.1" 200 -
+2026-03-26 10:21:42,809 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:21:42] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:21:42,811 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:21:42] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:21:43,986 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:21:43] "GET /dashboard HTTP/1.1" 200 -
+2026-03-26 10:21:44,005 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:21:44] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:21:44,006 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:21:44] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:21:56,959 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:21:56] "GET / HTTP/1.1" 200 -
+2026-03-26 10:21:56,981 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:21:56] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:21:56,982 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:21:56] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-26 10:22:02,098 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:22:02] "POST /api/scan/email HTTP/1.1" 200 -
+2026-03-26 10:22:04,110 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:22:04] "GET /dashboard HTTP/1.1" 200 -
+2026-03-26 10:22:04,130 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:22:04] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-26 10:22:04,132 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:22:04] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -

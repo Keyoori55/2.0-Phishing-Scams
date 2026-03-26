@@ -424,7 +424,14 @@ def get_dashboard_stats(user_id):
         return None
     
     stats = {
+        'kpis': {
+            'total_scans': 0,
+            'threats_blocked': 0,
+            'avg_risk': 0,
+            'system_accuracy': 0.94 
+        },
         'phishing_vs_legitimate': {'phishing': 0, 'legitimate': 0},
+        'scan_distribution': {'url': 0, 'email': 0, 'file': 0},
         'scans_over_time': {'labels': [], 'data': []},
         'risk_distribution': {'low': 0, 'medium': 0, 'high': 0},
         'top_indicators': {'labels': ['Fear', 'Urgency', 'Trust', 'Greed', 'Authority'], 'data': [0, 0, 0, 0, 0]}
@@ -433,21 +440,55 @@ def get_dashboard_stats(user_id):
     cursor = conn.cursor(dictionary=True)
     
     try:
-        # 1. Phishing vs Legitimate
-        query_v = (
-            "SELECT verdict, COUNT(*) as count FROM ("
-            "  SELECT verdict FROM emails WHERE user_id = %s "
+        # Fetch current system accuracy from model history
+        cursor.execute("SELECT accuracy FROM model_history WHERE active_status = TRUE LIMIT 1")
+        model_row = cursor.fetchone()
+        if model_row:
+            stats['kpis']['system_accuracy'] = round(float(model_row['accuracy']), 4)
+
+        # 1. Combined Scans Data
+        query_combined = (
+            "SELECT type, verdict, score, created_at FROM ("
+            "  SELECT 'email' as type, verdict, phishing_probability as score, created_at FROM emails WHERE user_id = %s "
             "  UNION ALL "
-            "  SELECT verdict FROM scan_logs WHERE user_id = %s"
-            ") as combined GROUP BY verdict"
+            "  SELECT scan_type as type, verdict, risk_score as score, created_at FROM scan_logs WHERE user_id = %s"
+            ") as combined"
         )
-        cursor.execute(query_v, (user_id, user_id))
+        cursor.execute(query_combined, (user_id, user_id))
         rows = cursor.fetchall()
+        
+        total_risk_sum = 0
         for row in rows:
-            if row['verdict'] in ['danger', 'phishing']:
-                stats['phishing_vs_legitimate']['phishing'] += row['count']
-            elif row['verdict'] == 'safe':
-                stats['phishing_vs_legitimate']['legitimate'] += row['count']
+            stats['kpis']['total_scans'] += 1
+            score = float(row['score'])
+            if score > 1.0: # Normalize legacy 0-100 scores
+                score = score / 100.0
+                
+            total_risk_sum += (score * 100)
+            
+            # Phishing vs Legitimate
+            if row['verdict'] in ['danger', 'phishing', 'High Risk', 'high']:
+                stats['phishing_vs_legitimate']['phishing'] += 1
+                stats['kpis']['threats_blocked'] += 1
+            elif row['verdict'] in ['safe', 'Safe']:
+                stats['phishing_vs_legitimate']['legitimate'] += 1
+                
+            # Scan Distribution
+            s_type = row['type']
+            if s_type in stats['scan_distribution']:
+                stats['scan_distribution'][s_type] += 1
+                
+            # Risk Distribution
+            display_score = score * 100
+            if display_score < 30:
+                stats['risk_distribution']['low'] += 1
+            elif display_score < 70:
+                stats['risk_distribution']['medium'] += 1
+            else:
+                stats['risk_distribution']['high'] += 1
+        
+        if stats['kpis']['total_scans'] > 0:
+            stats['kpis']['avg_risk'] = round(total_risk_sum / stats['kpis']['total_scans'], 1)
 
         # 2. Scans Over Time (Last 7 days)
         query_t = (
@@ -460,29 +501,10 @@ def get_dashboard_stats(user_id):
             "GROUP BY DATE(created_at) ORDER BY DATE(created_at)"
         )
         cursor.execute(query_t, (user_id, user_id))
-        rows = cursor.fetchall()
-        for row in rows:
+        t_rows = cursor.fetchall()
+        for row in t_rows:
             stats['scans_over_time']['labels'].append(row['date'].strftime('%a'))
             stats['scans_over_time']['data'].append(row['count'])
-
-        # 3. Risk Level Distribution
-        query_r = (
-            "SELECT score FROM ("
-            "  SELECT phishing_probability as score FROM emails WHERE user_id = %s "
-            "  UNION ALL "
-            "  SELECT risk_score as score FROM scan_logs WHERE user_id = %s"
-            ") as combined"
-        )
-        cursor.execute(query_r, (user_id, user_id))
-        rows = cursor.fetchall()
-        for row in rows:
-            score = float(row['score']) * 100
-            if score < 30:
-                stats['risk_distribution']['low'] += 1
-            elif score < 70:
-                stats['risk_distribution']['medium'] += 1
-            else:
-                stats['risk_distribution']['high'] += 1
 
         # 4. Top Indicators (Averages)
         query_i = (
@@ -491,14 +513,14 @@ def get_dashboard_stats(user_id):
             "JOIN emails e ON es.email_id = e.id WHERE e.user_id = %s"
         )
         cursor.execute(query_i, (user_id,))
-        row = cursor.fetchone()
-        if row and row['fear'] is not None:
+        i_row = cursor.fetchone()
+        if i_row and i_row['fear'] is not None:
             stats['top_indicators']['data'] = [
-                round(float(row['fear']), 2),
-                round(float(row['urgency']), 2),
-                round(float(row['trust']), 2),
-                round(float(row['greed']), 2),
-                round(float(row['authority']), 2)
+                round(float(i_row['fear']), 2),
+                round(float(i_row['urgency']), 2),
+                round(float(i_row['trust']), 2),
+                round(float(i_row['greed']), 2),
+                round(float(i_row['authority']), 2)
             ]
 
         return stats
