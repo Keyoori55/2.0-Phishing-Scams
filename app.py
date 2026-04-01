@@ -207,15 +207,38 @@ def scan_email_file():
 
 @app.route('/api/scan/file', methods=['POST'])
 def scan_file():
-    # In a real app we'd handle the file upload, 
-    # but based on the JS version it's just analyzing the filename
-    file_name = request.json.get('fileName', '')
-    if not file_name:
-        return jsonify({"error": "No file name provided"}), 400
+    if 'file' not in request.files:
+        return jsonify({"error": "No file uploaded"}), 400
+        
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({"error": "No selected file"}), 400
+
+    file_name = file.filename
+    
+    # Save to temp file for processing
+    temp_dir = "temp_scans"
+    if not os.path.exists(temp_dir):
+        os.makedirs(temp_dir)
+        
+    temp_path = os.path.join(temp_dir, file_name)
+    file.save(temp_path)
+    
+    content = ""
+    try:
+        from logic.ml_logic import load_text_from_file
+        content = load_text_from_file(temp_path)
+    except Exception as e:
+        print(f"Error extracting content: {e}")
+        content = ""
+    finally:
+        # Cleanup temp file
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
         
     # Simulate processing time
     time.sleep(1.5)
-    result = analyze_file(file_name)
+    result = analyze_file(file_name, content)
     
     # Store in database logs
     user_id = session.get('user_id')

@@ -196,19 +196,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     scanFileBtn.addEventListener('click', async () => {
-        const fileName = fileNameDisplay.textContent;
-        if (fileName === 'Click to select a file') return;
+        const file = fileField.files[0];
+        if (!file) return;
+        
+        const formData = new FormData();
+        formData.append('file', file);
+        
         showLoading(true);
         try {
             const res = await fetch('/api/scan/file', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ fileName })
+                body: formData
             });
             const data = await res.json();
             showLoading(false);
-            renderResult(data);
-        } catch (err) { showLoading(false); alert('Error scanning file'); }
+            if (data.error) {
+                alert(data.error);
+            } else {
+                renderResult(data);
+            }
+        } catch (err) { 
+            showLoading(false); 
+            alert('Error scanning file'); 
+        }
     });
 
     const emailFileField = document.getElementById('email-file-field');

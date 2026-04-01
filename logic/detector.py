@@ -248,35 +248,117 @@ def analyze_email(text: str) -> dict:
         "eds_breakdown": eds_breakdown
     }
 
-def analyze_file(file_name: str) -> dict:
+def analyze_file(file_name: str, content: str = "") -> dict:
     """
-    Analyzes a filename for risk.
+    Analyzes a file (name and content) for risk.
     """
     risk_score = 10.0
     lower_name = file_name.lower()
+    lower_content = content.lower() if content else ""
     explanations = []
-
-    if any(lower_name.endswith(ext) for ext in [".exe", ".bat", ".vbs", ".js"]):
-        risk_score += 50
-        explanations.append("Dangerous file extension detected.")
+    
+    # --- FILENAME HEURISTICS ---
+    dangerous_exts = [".exe", ".bat", ".vbs", ".js", ".msi", ".cmd", ".scr", ".ps1", ".vbe", ".jse", ".wsf", ".wsh"]
+    if any(lower_name.endswith(ext) for ext in dangerous_exts):
+        risk_score += 65 # High enough to trigger High Risk when combined with base 10
+        explanations.append(f"CRITICAL: Dangerous executable or script extension detected: {os.path.splitext(file_name)[1]}. Executables are high-risk files.")
 
     if lower_name.count(".") > 1:
-        risk_score += 30
-        explanations.append("Double extension detected.")
+        # Check if it's a double extension like .pdf.exe or .txt.vbs
+        parts = lower_name.split('.')
+        if parts[-1] in ["exe", "bat", "vbs", "js", "scr", "cmd"]:
+            risk_score += 40
+            explanations.append("High-risk double extension detected (e.g., .txt.exe), a common obfuscation technique.")
+        else:
+            risk_score += 20
+            explanations.append("Multiple extensions detected, potentially hiding the true file type.")
+
+    # --- CONTENT HEURISTICS ---
+    if content:
+        # Detect suspicious script patterns
+        suspicious_patterns = [
+            # General script and shell patterns
+            (r"eval\(", 30, "Contains 'eval()' used for dynamic code execution."),
+            (r"base64[_-]decode|atob\(", 25, "Contains base64 decoding logic, often used to hide payloads."),
+            (r"powershell\.exe|bypass|noprofile|windowstyle\s+hidden", 45, "Detected PowerShell obfuscation or stealth execution flags."),
+            (r"cmd\.exe\s+/c|/r\s+", 25, "Attempts to execute shell commands directly."),
+            (r"downloadstring|downloadfile|iwr\s+|curl\s+|wget\s+", 40, "Contains network downloader commands."),
+            (r"wscript\.shell|shell\.application", 30, "Uses Windows Script Host for system interaction."),
+            (r"createobject\(", 20, "Generic object creation (common in VBScript malware)."),
+            
+            # PDF Specific patterns (analyzed from extracted text/metadata)
+            (r"/javascript|/js\b", 60, "CRITICAL: Detected embedded JavaScript in document (High-risk PDF weaponization)."),
+            (r"/openaction|/aa\b", 60, "CRITICAL: Automatic execution trigger found (PDF weaponization indicator)."),
+            (r"/launch|/embeddedfile", 45, "High Risk: Document attempts to launch external processes or contains embedded files."),
+            (r"/uri|/action\s+/s\b", 35, "Suspicious: Document contains automatic URL redirection or hidden links."),
+            
+            # Office / Macro patterns
+            (r"autoopen|document_open|workbook_open", 70, "CRITICAL: Contains auto-execution macros (Major Office threat indicator)."),
+            (r"autoexec|document_close|workbook_beforeclose", 50, "High Risk: Stealthy auto-execution macro patterns identified."),
+            (r"vba_project|vbaproject", 40, "Suspicious: Contains VBA Project references (Macro-enabled document)."),
+            (r"shell\s*\(|filesystemobject|winmgmts", 50, "CRITICAL: Macro attempts to interact with the OS or filesystem (Malicious behavior)."),
+            (r"ptrsafe|declare\s+function|lib\s+\"", 35, "High Risk: Uses external Windows APIs (Common in advanced malware)."),
+            
+            # Social Engineering / Phishing Lures in Document
+            (r"urgent|immediately|action\s+required|suspended|failure\s+to\s+comply", 35, "Document uses high-pressure/urgent language often found in phishing (Social Engineering)."),
+            (r"enable\s+macros|enable\s+content|decrypt|unlock\s+hidden\s+data", 60, "CRITICAL: Document explicitly asks user to enable macros or decrypt content (Classic malware lure)."),
+            (r"salary|credentials|account\s+updates|security\s+override", 30, "Document contains common phishing lure keywords (Financial/Security)."),
+            (r"system\s+username|password\s+when\s+prompted", 45, "High Risk: Document contains indicators of credential harvesting attempts."),
+        ]
+        
+        match_count = 0
+        for pattern, weight, explanation in suspicious_patterns:
+            if re.search(pattern, lower_content):
+                risk_score += weight
+                explanations.append(explanation)
+                match_count += 1
+        
+        # Obfuscation indicator (high density of non-alphanumeric chars or long strings without spaces)
+        if len(content) > 100:
+            alnum_ratio = len([c for c in content if c.isalnum() or c.isspace()]) / len(content)
+            if alnum_ratio < 0.55:
+                risk_score += 25
+                explanations.append("High entropy/obfuscation detected in file content (Stealth indicator).")
+            
+            # Check for very long strings (potential encoded payloads)
+            if any(len(word) > 200 for word in content.split()):
+                risk_score += 20
+                explanations.append("Detected unusually long contiguous strings (Potential encoded payload).")
+
+    # Use ML model if available (filename-based)
+    if ML_AVAILABLE:
+        try:
+            label = file_model.predict([file_name])[0]
+            if label == 'phishing' or label == 'suspicious':
+                risk_score += 20
+                explanations.append("AI model flags the filename as highly suspicious based on historical patterns.")
+        except: pass
+
+    # Final Score adjustment for forced High Risk cases
+    # If it's an executable OR matched multiple critical document patterns, force High Risk
+    is_executable = any(lower_name.endswith(ext) for ext in dangerous_exts)
+    has_critical_matches = any("CRITICAL" in exp for exp in explanations)
+    
+    if is_executable or has_critical_matches:
+        risk_score = max(risk_score, 75.0)
+        if is_executable:
+            explanations.append("Priority Protection: Flagged as High Risk due to dangerous file type.")
+        if has_critical_matches:
+            explanations.append("Priority Protection: Flagged as High Risk due to verified malicious active content markers.")
 
     final_score = max(0, min(100, risk_score))
     verdict = get_risk_level(final_score)
 
+    steps = [
+        {"name": "Security Policy Check", "status": "safe" if not any(lower_name.endswith(ext) for ext in dangerous_exts) else "danger", 
+         "details": "Filename meets safety policies." if not any(lower_name.endswith(ext) for ext in dangerous_exts) else "Blocked: Dangerous file extension."},
+        {"name": "Deep Content Inspection", "status": "safe" if final_score < 40 else ("warning" if final_score < 70 else "danger"), 
+         "details": f"Analyzed {len(content)} chars. {'No critical threats' if final_score < 40 else str(match_count) + ' threat markers'} identified." if content else "No content available for inspection."},
+    ]
+
     return {
         "verdict": verdict,
         "score": round(final_score, 2),
-        "steps": [
-            {"name": "Extension Check", "status": "safe" if not any(lower_name.endswith(ext) for ext in [".exe", ".bat", ".vbs", ".js"]) else "danger", 
-             "details": "Safe file type" if not any(lower_name.endswith(ext) for ext in [".exe", ".bat", ".vbs", ".js"]) else "Detected executable or script extension."},
-            {"name": "Double Extension", "status": "safe" if lower_name.count(".") <= 1 else "danger", 
-             "details": "Single extension found" if lower_name.count(".") <= 1 else "Found multiple hidden extensions."},
-            {"name": "Heuristic Scan", "status": "safe" if final_score < 51 else "danger", 
-             "details": "No malicious patterns" if final_score < 51 else "Detected potential malicious payload markers."}
-        ],
-        "explanations": explanations
+        "steps": steps,
+        "explanations": list(set(explanations)) # Unique explanations
     }

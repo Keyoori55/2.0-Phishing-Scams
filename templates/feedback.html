@@ -40,11 +40,91 @@
     </div>
 
     <div id="feedback-success" class="successCard" style="display: none;">
-        <h1>Feedback Received</h1>
+        <h1 style="color: #16a34a;">Feedback Received</h1>
         <p>Thank you for your suggestions. Your input helps us improve the detection logic.</p>
-        <button class="btn btn-primary" id="restart-feedback-btn">
+        <button class="btn btn-primary" id="restart-feedback-btn" style="width: 100%;">
             Submit Another Feedback
         </button>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const emojiButtons = document.querySelectorAll('.emojiButton');
+            const submitBtn = document.getElementById('submit-feedback-btn');
+            const feedbackForm = document.getElementById('feedback-form');
+            const formContainer = document.getElementById('feedback-form-container');
+            const successContainer = document.getElementById('feedback-success');
+            const restartBtn = document.getElementById('restart-feedback-btn');
+            
+            let selectedRating = null;
+
+            emojiButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove activeEmoji class from all
+                    emojiButtons.forEach(b => b.classList.remove('activeEmoji'));
+                    
+                    // Add activeEmoji class to clicked
+                    btn.classList.add('activeEmoji');
+                    selectedRating = btn.getAttribute('data-val');
+                    
+                    // Enable submit button
+                    submitBtn.disabled = false;
+                });
+            });
+
+            feedbackForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const message = document.getElementById('feedback-comment').value;
+                if (!selectedRating || !message) return;
+
+                submitBtn.disabled = true;
+                submitBtn.innerText = 'Sending...';
+
+                try {
+                    const response = await fetch('/api/feedback', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            rating: selectedRating,
+                            message: message,
+                            name: 'Anonymous'
+                        })
+                    });
+
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        formContainer.style.display = 'none';
+                        successContainer.style.display = 'block';
+                    } else {
+                        alert('Error: ' + (data.error || 'Failed to submit feedback'));
+                        submitBtn.disabled = false;
+                        submitBtn.innerText = 'Submit Feedback';
+                    }
+                } catch (err) {
+                    console.error('Submission error:', err);
+                    alert('An error occurred. Please check your connection.');
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = 'Submit Feedback';
+                }
+            });
+
+            restartBtn.addEventListener('click', () => {
+                // Reset form
+                feedbackForm.reset();
+                selectedRating = null;
+                emojiButtons.forEach(b => b.classList.remove('activeEmoji'));
+                submitBtn.disabled = true;
+                submitBtn.innerText = 'Submit Feedback';
+                
+                // Switch back to form
+                successContainer.style.display = 'none';
+                formContainer.style.display = 'block';
+            });
+        });
+    </script>
 </div>
 {% endblock %}

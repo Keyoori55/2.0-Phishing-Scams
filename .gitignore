@@ -7,3 +7,14 @@ venv/
 .vscode/
 *.zip
 *.bat
+scan_logs.log
+data/
+temp_scans/
+*.pdf
+*.eml
+*.txt
+verify_fixes.py
+verify_feedback.py
+high_risk_test_document.pdf
+phishing_test_email.eml
+invoice_payment.exe.txt

@@ -839,3 +839,368 @@
 2026-03-26 10:22:04,110 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:22:04] "GET /dashboard HTTP/1.1" 200 -
 2026-03-26 10:22:04,130 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:22:04] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
 2026-03-26 10:22:04,132 - werkzeug - INFO - 127.0.0.1 - - [26/Mar/2026 10:22:04] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-31 15:19:14,442 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-31 15:19:14,800 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-31 15:19:14,800 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-31 15:19:14,800 - werkzeug - INFO -  * Restarting with stat
+2026-03-31 15:19:16,089 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-31 15:19:16,162 - werkzeug - WARNING -  * Debugger is active!
+2026-03-31 15:19:16,166 - werkzeug - INFO -  * Debugger PIN: 960-994-306
+2026-03-31 15:19:37,854 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:19:37] "GET / HTTP/1.1" 200 -
+2026-03-31 15:19:37,920 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:19:37] "GET /static/css/styles.css HTTP/1.1" 200 -
+2026-03-31 15:19:37,923 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:19:37] "GET /static/js/scripts.js HTTP/1.1" 200 -
+2026-03-31 15:19:38,567 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:19:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-31 15:19:43,814 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:19:43] "GET /what-is-phishing HTTP/1.1" 200 -
+2026-03-31 15:19:43,835 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:19:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-31 15:19:43,837 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:19:43] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-31 15:19:49,593 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:19:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-31 15:20:17,575 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:20:17] "GET /about HTTP/1.1" 200 -
+2026-03-31 15:20:17,600 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:20:17] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-31 15:20:17,600 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:20:17] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-31 15:20:18,230 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:20:18] "GET /feedback HTTP/1.1" 200 -
+2026-03-31 15:20:18,248 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:20:18] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-31 15:20:18,248 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:20:18] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-31 15:20:20,436 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:20:20] "GET /about HTTP/1.1" 200 -
+2026-03-31 15:20:20,454 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:20:20] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-31 15:20:20,458 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:20:20] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-31 15:20:22,714 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:20:22] "GET /what-is-phishing HTTP/1.1" 200 -
+2026-03-31 15:20:22,758 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:20:22] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-31 15:20:22,758 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:20:22] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-31 15:20:42,089 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:20:42] "GET / HTTP/1.1" 200 -
+2026-03-31 15:20:42,112 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:20:42] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-31 15:20:42,114 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:20:42] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-31 15:26:09,847 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-31 15:26:10,324 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-31 15:26:10,325 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-31 15:26:10,325 - werkzeug - INFO -  * Restarting with stat
+2026-03-31 15:26:11,180 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-31 15:26:11,249 - werkzeug - WARNING -  * Debugger is active!
+2026-03-31 15:26:11,253 - werkzeug - INFO -  * Debugger PIN: 448-389-944
+2026-03-31 15:27:05,783 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-31 15:27:05,860 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-31 15:27:05,860 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-31 15:27:05,863 - werkzeug - INFO -  * Restarting with stat
+2026-03-31 15:27:06,734 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-31 15:27:06,817 - werkzeug - WARNING -  * Debugger is active!
+2026-03-31 15:27:06,817 - werkzeug - INFO -  * Debugger PIN: 448-389-944
+2026-03-31 15:27:28,415 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:27:28] "GET / HTTP/1.1" 200 -
+2026-03-31 15:27:28,576 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:27:28] "GET /static/css/styles.css HTTP/1.1" 200 -
+2026-03-31 15:27:28,577 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:27:28] "GET /static/js/scripts.js HTTP/1.1" 200 -
+2026-03-31 15:27:29,075 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:27:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-31 15:27:39,090 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:27:39] "POST /api/scan/email-file HTTP/1.1" 200 -
+2026-03-31 15:27:59,534 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:27:59] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:28:09,360 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:28:09] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:28:24,697 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:28:24] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:31:22,970 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:31:22] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:33:43,428 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\app.py', reloading
+2026-03-31 15:33:43,589 - werkzeug - INFO -  * Restarting with stat
+2026-03-31 15:33:44,684 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-31 15:33:44,752 - werkzeug - WARNING -  * Debugger is active!
+2026-03-31 15:33:44,755 - werkzeug - INFO -  * Debugger PIN: 448-389-944
+2026-03-31 15:33:54,925 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\detector.py', reloading
+2026-03-31 15:33:55,061 - werkzeug - INFO -  * Restarting with stat
+2026-03-31 15:33:55,911 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-31 15:33:55,983 - werkzeug - WARNING -  * Debugger is active!
+2026-03-31 15:33:55,986 - werkzeug - INFO -  * Debugger PIN: 448-389-944
+2026-03-31 15:35:08,499 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:35:08] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:35:10,118 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:35:10] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:35:17,990 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\detector.py', reloading
+2026-03-31 15:35:18,148 - werkzeug - INFO -  * Restarting with stat
+2026-03-31 15:35:19,070 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-31 15:35:19,134 - werkzeug - WARNING -  * Debugger is active!
+2026-03-31 15:35:19,136 - werkzeug - INFO -  * Debugger PIN: 448-389-944
+2026-03-31 15:35:37,834 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:35:37] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:35:39,449 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:35:39] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:36:58,876 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:36:58] "[31m[1mPOST /api/scan/file HTTP/1.1[0m" 400 -
+2026-03-31 15:37:05,992 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:37:05] "[31m[1mPOST /api/scan/file HTTP/1.1[0m" 400 -
+2026-03-31 15:37:09,970 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:37:09] "GET / HTTP/1.1" 200 -
+2026-03-31 15:37:10,045 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:37:10] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-31 15:37:10,046 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:37:10] "GET /static/js/scripts.js HTTP/1.1" 200 -
+2026-03-31 15:37:18,920 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:37:18] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:38:24,401 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\detector.py', reloading
+2026-03-31 15:38:24,561 - werkzeug - INFO -  * Restarting with stat
+2026-03-31 15:38:25,524 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-31 15:38:25,580 - werkzeug - WARNING -  * Debugger is active!
+2026-03-31 15:38:25,585 - werkzeug - INFO -  * Debugger PIN: 448-389-944
+2026-03-31 15:38:38,191 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:38:38] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:38:39,810 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:38:39] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:40:38,693 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:40:38] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:44:05,975 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-31 15:44:06,310 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-31 15:44:06,311 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-31 15:44:06,312 - werkzeug - INFO -  * Restarting with stat
+2026-03-31 15:44:07,156 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-31 15:44:07,213 - werkzeug - WARNING -  * Debugger is active!
+2026-03-31 15:44:07,216 - werkzeug - INFO -  * Debugger PIN: 809-526-340
+2026-03-31 15:44:36,525 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:44:36] "GET / HTTP/1.1" 200 -
+2026-03-31 15:44:36,586 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:44:36] "GET /static/js/scripts.js HTTP/1.1" 200 -
+2026-03-31 15:44:36,587 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:44:36] "GET /static/css/styles.css HTTP/1.1" 200 -
+2026-03-31 15:44:36,909 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:44:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-31 15:44:55,766 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:44:55] "HEAD / HTTP/1.1" 200 -
+2026-03-31 15:44:55,768 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:44:55] "GET / HTTP/1.1" 200 -
+2026-03-31 15:44:59,461 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:44:59] "GET / HTTP/1.1" 200 -
+2026-03-31 15:44:59,476 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:44:59] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-31 15:44:59,478 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:44:59] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-31 15:45:05,805 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:45:05] "GET /what-is-phishing HTTP/1.1" 200 -
+2026-03-31 15:45:05,817 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:45:05] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-31 15:45:05,822 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:45:05] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-31 15:45:07,567 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:45:07] "GET / HTTP/1.1" 200 -
+2026-03-31 15:45:07,583 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:45:07] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-31 15:45:07,584 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:45:07] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-31 15:45:15,499 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:45:15] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:49:22,295 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:49:22] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:49:23,830 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:49:23] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:52:05,648 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\ml_logic.py', reloading
+2026-03-31 15:52:05,795 - werkzeug - INFO -  * Restarting with stat
+2026-03-31 15:52:06,736 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-31 15:52:06,810 - werkzeug - WARNING -  * Debugger is active!
+2026-03-31 15:52:06,811 - werkzeug - INFO -  * Debugger PIN: 809-526-340
+2026-03-31 15:52:16,575 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\app.py', reloading
+2026-03-31 15:52:16,720 - werkzeug - INFO -  * Restarting with stat
+2026-03-31 15:52:17,599 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-31 15:52:17,650 - werkzeug - WARNING -  * Debugger is active!
+2026-03-31 15:52:17,655 - werkzeug - INFO -  * Debugger PIN: 809-526-340
+2026-03-31 15:52:35,892 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\detector.py', reloading
+2026-03-31 15:52:36,032 - werkzeug - INFO -  * Restarting with stat
+2026-03-31 15:52:36,940 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-31 15:52:36,999 - werkzeug - WARNING -  * Debugger is active!
+2026-03-31 15:52:37,001 - werkzeug - INFO -  * Debugger PIN: 809-526-340
+2026-03-31 15:53:06,736 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-31 15:53:06,808 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-31 15:53:06,808 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-31 15:53:06,810 - werkzeug - INFO -  * Restarting with stat
+2026-03-31 15:53:07,627 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-31 15:53:07,702 - werkzeug - WARNING -  * Debugger is active!
+2026-03-31 15:53:07,703 - werkzeug - INFO -  * Debugger PIN: 809-526-340
+2026-03-31 15:53:28,618 - pypdf._reader - WARNING - invalid pdf header: b'\n    '
+2026-03-31 15:53:28,618 - pypdf._reader - WARNING - CAUTION: startxref found while searching for %%EOF. The file might be truncated and some data might not be read.
+2026-03-31 15:53:28,618 - pypdf._reader - WARNING - EOF marker not found
+2026-03-31 15:53:28,619 - PhishingDetector.MLLogic - ERROR - Error reading PDF temp_scans\invoice.pdf: Stream has ended unexpectedly
+2026-03-31 15:53:30,149 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:53:30] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:53:31,685 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:53:31] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:53:50,445 - PhishingDetector.MLLogic - ERROR - Error reading ZIP temp_scans\backup.zip: File is not a zip file
+2026-03-31 15:53:51,990 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:53:51] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:53:52,457 - PhishingDetector.MLLogic - ERROR - Error reading DOCX temp_scans\invoice.docx: Package not found at 'temp_scans\invoice.docx'
+2026-03-31 15:53:53,993 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:53:53] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:53:55,527 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:53:55] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:53:57,044 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:53:57] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:54:08,992 - PhishingDetector.MLLogic - ERROR - Error reading ZIP temp_scans\backup.zip: File is not a zip file
+2026-03-31 15:54:10,495 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:54:10] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:54:10,506 - PhishingDetector.MLLogic - ERROR - Error reading DOCX temp_scans\invoice.docx: Package not found at 'temp_scans\invoice.docx'
+2026-03-31 15:54:12,035 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:54:12] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:54:13,567 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:54:13] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:54:15,090 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:54:15] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:54:24,456 - PhishingDetector.MLLogic - ERROR - Error reading ZIP temp_scans\backup.zip: File is not a zip file
+2026-03-31 15:54:25,990 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:54:25] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:54:25,995 - PhishingDetector.MLLogic - ERROR - Error reading DOCX temp_scans\invoice.docx: Package not found at 'temp_scans\invoice.docx'
+2026-03-31 15:54:27,511 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:54:27] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:54:29,043 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:54:29] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:54:30,553 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:54:30] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:54:39,278 - PhishingDetector.MLLogic - ERROR - Error reading ZIP temp_scans\backup.zip: File is not a zip file
+2026-03-31 15:54:40,794 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:54:40] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:54:40,795 - PhishingDetector.MLLogic - ERROR - Error reading DOCX temp_scans\invoice.docx: Package not found at 'temp_scans\invoice.docx'
+2026-03-31 15:54:42,327 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:54:42] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:54:43,845 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:54:43] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:54:45,363 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:54:45] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:55:26,042 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:55:26] "GET / HTTP/1.1" 200 -
+2026-03-31 15:55:26,149 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:55:26] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-31 15:55:26,150 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:55:26] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-31 15:55:26,599 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:55:26] "GET / HTTP/1.1" 200 -
+2026-03-31 15:55:26,611 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:55:26] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-31 15:55:26,616 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:55:26] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-31 15:55:33,203 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:55:33] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:57:35,065 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 15:57:35] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 15:59:07,009 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-31 16:03:11,315 - PhishingDetector.MLLogic - ERROR - Error reading ZIP temp_scans\backup.zip: File is not a zip file
+2026-03-31 16:03:12,847 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:03:12] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:03:12,860 - PhishingDetector.MLLogic - ERROR - Error reading DOCX temp_scans\invoice.docx: Package not found at 'temp_scans\invoice.docx'
+2026-03-31 16:03:14,377 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:03:14] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:03:15,915 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:03:15] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:03:17,447 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:03:17] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:03:39,535 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\detector.py', reloading
+2026-03-31 16:03:39,695 - werkzeug - INFO -  * Restarting with stat
+2026-03-31 16:03:40,622 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-31 16:03:40,675 - werkzeug - WARNING -  * Debugger is active!
+2026-03-31 16:03:40,677 - werkzeug - INFO -  * Debugger PIN: 809-526-340
+2026-03-31 16:03:47,198 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\verify_fixes.py', reloading
+2026-03-31 16:03:47,331 - werkzeug - INFO -  * Restarting with stat
+2026-03-31 16:03:48,218 - PhishingDetector - INFO - ML models loaded successfully.
+2026-03-31 16:03:48,285 - werkzeug - WARNING -  * Debugger is active!
+2026-03-31 16:03:48,288 - werkzeug - INFO -  * Debugger PIN: 809-526-340
+2026-03-31 16:03:57,661 - PhishingDetector.MLLogic - ERROR - Error reading ZIP temp_scans\backup.zip: File is not a zip file
+2026-03-31 16:03:59,197 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:03:59] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:03:59,244 - PhishingDetector.MLLogic - ERROR - Error reading DOCX temp_scans\invoice.docx: Package not found at 'temp_scans\invoice.docx'
+2026-03-31 16:04:00,763 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:04:00] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:04:02,280 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:04:02] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:04:03,795 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:04:03] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:04:03,801 - PhishingDetector.MLLogic - ERROR - Error reading DOCX temp_scans\salary_update.docx: Package not found at 'temp_scans\salary_update.docx'
+2026-03-31 16:04:05,325 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:04:05] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:05:40,319 - PhishingDetector.MLLogic - ERROR - Error reading ZIP temp_scans\backup.zip: File is not a zip file
+2026-03-31 16:05:41,845 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:05:41] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:05:41,849 - PhishingDetector.MLLogic - ERROR - Error reading DOCX temp_scans\invoice.docx: Package not found at 'temp_scans\invoice.docx'
+2026-03-31 16:05:43,382 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:05:43] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:05:44,907 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:05:44] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:05:46,437 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:05:46] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:05:46,443 - PhishingDetector.MLLogic - ERROR - Error reading DOCX temp_scans\salary_update.docx: Package not found at 'temp_scans\salary_update.docx'
+2026-03-31 16:05:47,961 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:05:47] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:06:55,794 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:06:55] "GET / HTTP/1.1" 200 -
+2026-03-31 16:06:55,879 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:06:55] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-31 16:06:55,882 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:06:55] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-31 16:07:02,370 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:07:02] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:07:09,984 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:07:09] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:07:20,340 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:07:20] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:07:25,085 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:07:25] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:07:25,749 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:07:25] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:07:35,674 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:07:35] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:07:47,502 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:07:47] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:08:00,986 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:08:00] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:08:15,352 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:08:15] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:09:45,092 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:09:45] "POST /api/scan/email-file HTTP/1.1" 200 -
+2026-03-31 16:10:31,572 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:10:31] "GET / HTTP/1.1" 200 -
+2026-03-31 16:10:31,588 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:10:31] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-31 16:10:31,590 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:10:31] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-31 16:11:22,445 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:11:22] "GET /login HTTP/1.1" 200 -
+2026-03-31 16:11:22,456 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:11:22] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-31 16:11:22,461 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:11:22] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-31 16:11:26,534 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:11:26] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-31 16:11:26,539 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:11:26] "GET / HTTP/1.1" 200 -
+2026-03-31 16:11:26,555 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:11:26] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-31 16:11:26,557 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:11:26] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-03-31 16:11:35,620 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:11:35] "POST /api/scan/email-file HTTP/1.1" 200 -
+2026-03-31 16:12:47,307 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:12:47] "POST /api/scan/email-file HTTP/1.1" 200 -
+2026-03-31 16:12:54,996 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:12:54] "POST /api/scan/email-file HTTP/1.1" 200 -
+2026-03-31 16:13:37,179 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:13:37] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:13:44,453 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:13:44] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:13:58,508 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:13:58] "POST /api/scan/file HTTP/1.1" 200 -
+2026-03-31 16:14:01,753 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:14:01] "GET /dashboard HTTP/1.1" 200 -
+2026-03-31 16:14:01,766 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:14:01] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-03-31 16:14:01,771 - werkzeug - INFO - 127.0.0.1 - - [31/Mar/2026 16:14:01] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-04-01 13:27:46,958 - PhishingDetector - INFO - ML models loaded successfully.
+2026-04-01 13:27:47,219 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-01 13:27:47,220 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-01 13:27:47,222 - werkzeug - INFO -  * Restarting with stat
+2026-04-01 13:27:48,234 - PhishingDetector - INFO - ML models loaded successfully.
+2026-04-01 13:27:48,294 - werkzeug - WARNING -  * Debugger is active!
+2026-04-01 13:27:48,296 - werkzeug - INFO -  * Debugger PIN: 110-536-748
+2026-04-01 13:28:38,266 - PhishingDetector - INFO - ML models loaded successfully.
+2026-04-01 13:28:38,335 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-01 13:28:38,335 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-01 13:28:38,337 - werkzeug - INFO -  * Restarting with stat
+2026-04-01 13:28:39,164 - PhishingDetector - INFO - ML models loaded successfully.
+2026-04-01 13:28:39,222 - werkzeug - WARNING -  * Debugger is active!
+2026-04-01 13:28:39,226 - werkzeug - INFO -  * Debugger PIN: 110-536-748
+2026-04-01 13:28:42,925 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:28:42] "GET / HTTP/1.1" 200 -
+2026-04-01 13:28:42,988 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:28:42] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-04-01 13:28:42,988 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:28:42] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-01 13:28:43,131 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:28:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-01 13:28:52,195 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:28:52] "GET / HTTP/1.1" 200 -
+2026-04-01 13:28:52,209 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:28:52] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-01 13:28:52,213 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:28:52] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-04-01 13:29:07,369 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:29:07] "POST /api/scan/email-file HTTP/1.1" 200 -
+2026-04-01 13:29:17,848 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:29:17] "POST /api/scan/email-file HTTP/1.1" 200 -
+2026-04-01 13:29:41,041 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:29:41] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2026-04-01 13:29:41,060 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:29:41] "GET /login HTTP/1.1" 200 -
+2026-04-01 13:29:41,076 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:29:41] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-01 13:29:41,079 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:29:41] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-04-01 13:29:43,201 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:29:43] "GET / HTTP/1.1" 200 -
+2026-04-01 13:29:43,221 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:29:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-01 13:29:43,225 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:29:43] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-04-01 13:30:38,788 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:30:38] "POST /api/scan/email-file HTTP/1.1" 200 -
+2026-04-01 13:31:01,931 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:31:01] "POST /api/scan/email-file HTTP/1.1" 200 -
+2026-04-01 13:31:37,985 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:31:37] "POST /api/scan/email HTTP/1.1" 200 -
+2026-04-01 13:31:38,857 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:31:38] "POST /api/scan/email HTTP/1.1" 200 -
+2026-04-01 13:32:05,664 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:32:05] "POST /api/scan/email HTTP/1.1" 200 -
+2026-04-01 13:32:06,038 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:32:06] "POST /api/scan/email HTTP/1.1" 200 -
+2026-04-01 13:32:06,803 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:32:06] "POST /api/scan/email HTTP/1.1" 200 -
+2026-04-01 13:33:08,128 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:33:08] "POST /api/scan/email-file HTTP/1.1" 200 -
+2026-04-01 13:33:33,809 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:33:33] "POST /api/scan/email-file HTTP/1.1" 200 -
+2026-04-01 13:33:56,572 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:33:56] "POST /api/scan/email HTTP/1.1" 200 -
+2026-04-01 13:34:46,635 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:34:46] "POST /api/scan/email HTTP/1.1" 200 -
+2026-04-01 13:35:04,296 - PhishingDetector.MLLogic - ERROR - Error reading PDF temp_scans\doc.pdf: No module named 'pypdf'
+2026-04-01 13:35:05,814 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:35:05] "POST /api/scan/file HTTP/1.1" 200 -
+2026-04-01 13:35:10,031 - PhishingDetector.MLLogic - ERROR - Error reading PDF temp_scans\doc.pdf: No module named 'pypdf'
+2026-04-01 13:35:11,553 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:35:11] "POST /api/scan/file HTTP/1.1" 200 -
+2026-04-01 13:35:20,067 - PhishingDetector.MLLogic - ERROR - Error reading PDF temp_scans\resum.pdf: No module named 'pypdf'
+2026-04-01 13:35:21,585 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:35:21] "POST /api/scan/file HTTP/1.1" 200 -
+2026-04-01 13:37:17,520 - PhishingDetector.MLLogic - ERROR - Error reading DOCX temp_scans\payment_notice.docx: No module named 'docx'
+2026-04-01 13:37:19,041 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:37:19] "POST /api/scan/file HTTP/1.1" 200 -
+2026-04-01 13:45:23,739 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\logic\\detector.py', reloading
+2026-04-01 13:45:23,938 - werkzeug - INFO -  * Restarting with stat
+2026-04-01 13:45:24,965 - PhishingDetector - INFO - ML models loaded successfully.
+2026-04-01 13:45:25,030 - werkzeug - WARNING -  * Debugger is active!
+2026-04-01 13:45:25,033 - werkzeug - INFO -  * Debugger PIN: 110-536-748
+2026-04-01 13:45:37,196 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\verify_fixes.py', reloading
+2026-04-01 13:45:37,364 - werkzeug - INFO -  * Restarting with stat
+2026-04-01 13:45:38,271 - PhishingDetector - INFO - ML models loaded successfully.
+2026-04-01 13:45:38,345 - werkzeug - WARNING -  * Debugger is active!
+2026-04-01 13:45:38,348 - werkzeug - INFO -  * Debugger PIN: 110-536-748
+2026-04-01 13:47:47,475 - PhishingDetector.MLLogic - ERROR - Error reading DOCX temp_scans\payment_notice.docx: No module named 'docx'
+2026-04-01 13:47:49,009 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:47:49] "POST /api/scan/file HTTP/1.1" 200 -
+2026-04-01 13:47:52,662 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:47:52] "GET /what-is-phishing HTTP/1.1" 200 -
+2026-04-01 13:47:52,725 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:47:52] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-04-01 13:47:52,725 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:47:52] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-01 13:47:55,629 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:47:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-01 13:48:10,712 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:48:10] "GET /login HTTP/1.1" 200 -
+2026-04-01 13:48:10,731 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:48:10] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-01 13:48:10,733 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:48:10] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-04-01 13:48:14,713 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:48:14] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-01 13:48:14,720 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:48:14] "GET / HTTP/1.1" 200 -
+2026-04-01 13:48:14,739 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:48:14] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-01 13:48:14,740 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:48:14] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-04-01 13:48:17,180 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:48:17] "GET /dashboard HTTP/1.1" 200 -
+2026-04-01 13:48:17,195 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:48:17] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-01 13:48:17,198 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:48:17] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-04-01 13:48:20,393 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:48:20] "GET / HTTP/1.1" 200 -
+2026-04-01 13:48:20,408 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:48:20] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-01 13:48:20,409 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:48:20] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-04-01 13:48:29,187 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:48:29] "POST /api/scan/email-file HTTP/1.1" 200 -
+2026-04-01 13:48:40,510 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:48:40] "POST /api/scan/email-file HTTP/1.1" 200 -
+2026-04-01 13:48:44,059 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:48:44] "GET /what-is-phishing HTTP/1.1" 200 -
+2026-04-01 13:48:44,076 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:48:44] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-01 13:48:44,079 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:48:44] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-04-01 13:48:45,927 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:48:45] "GET /about HTTP/1.1" 200 -
+2026-04-01 13:48:45,942 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:48:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-01 13:48:45,945 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:48:45] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-04-01 13:48:46,561 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:48:46] "GET /feedback HTTP/1.1" 200 -
+2026-04-01 13:48:46,573 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:48:46] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-01 13:48:46,578 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:48:46] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-04-01 13:51:05,860 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:51:05] "GET / HTTP/1.1" 200 -
+2026-04-01 13:51:05,879 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:51:05] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-01 13:51:05,890 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:51:05] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-04-01 13:51:13,014 - PhishingDetector.MLLogic - ERROR - Error reading PDF temp_scans\high_risk_finance.pdf: No module named 'pypdf'
+2026-04-01 13:51:14,555 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:51:14] "POST /api/scan/file HTTP/1.1" 200 -
+2026-04-01 13:51:27,872 - PhishingDetector.MLLogic - ERROR - Error reading PDF temp_scans\document.pdf: No module named 'pypdf'
+2026-04-01 13:51:29,382 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:51:29] "POST /api/scan/file HTTP/1.1" 200 -
+2026-04-01 13:52:08,153 - werkzeug - INFO -  * Detected change in 'C:\\Users\\rudrax\\OneDrive\\Desktop\\New folder\\phishing-detector-python\\verify_feedback.py', reloading
+2026-04-01 13:52:08,305 - werkzeug - INFO -  * Restarting with stat
+2026-04-01 13:52:09,249 - PhishingDetector - INFO - ML models loaded successfully.
+2026-04-01 13:52:09,327 - werkzeug - WARNING -  * Debugger is active!
+2026-04-01 13:52:09,329 - werkzeug - INFO -  * Debugger PIN: 110-536-748
+2026-04-01 13:54:48,198 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:54:48] "GET /feedback HTTP/1.1" 200 -
+2026-04-01 13:54:48,256 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:54:48] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-04-01 13:54:48,259 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:54:48] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-01 13:54:50,928 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:54:50] "POST /api/feedback HTTP/1.1" 200 -
+2026-04-01 13:54:52,903 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:54:52] "GET / HTTP/1.1" 200 -
+2026-04-01 13:54:52,916 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:54:52] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-01 13:54:52,921 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:54:52] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-04-01 13:55:08,703 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:55:08] "POST /api/scan/file HTTP/1.1" 200 -
+2026-04-01 13:56:21,720 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:56:21] "POST /api/scan/file HTTP/1.1" 200 -
+2026-04-01 13:56:40,215 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:56:40] "POST /api/scan/file HTTP/1.1" 200 -
+2026-04-01 13:57:45,909 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:57:45] "GET / HTTP/1.1" 200 -
+2026-04-01 13:57:45,923 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:57:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-01 13:57:45,927 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:57:45] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2026-04-01 13:57:55,680 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:57:55] "POST /api/scan/file HTTP/1.1" 200 -
+2026-04-01 13:58:06,407 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:58:06] "POST /api/scan/email-file HTTP/1.1" 200 -
+2026-04-01 13:58:16,738 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:58:16] "POST /api/scan/email-file HTTP/1.1" 200 -
+2026-04-01 13:58:25,015 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:58:25] "POST /api/scan/email-file HTTP/1.1" 200 -
+2026-04-01 13:58:31,736 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:58:31] "POST /api/scan/email-file HTTP/1.1" 200 -
+2026-04-01 13:59:19,948 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 13:59:19] "POST /api/scan/email HTTP/1.1" 200 -
+2026-04-01 14:00:00,367 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 14:00:00] "POST /api/scan/email-file HTTP/1.1" 200 -
+2026-04-01 14:00:11,165 - werkzeug - INFO - 127.0.0.1 - - [01/Apr/2026 14:00:11] "POST /api/scan/email-file HTTP/1.1" 200 -

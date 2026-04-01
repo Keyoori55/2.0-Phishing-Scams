@@ -12,7 +12,7 @@ logger = logging.getLogger("PhishingDetector.MLLogic")
 
 def load_text_from_file(file_path: str) -> str:
     """
-    Reads content from .txt or .eml files.
+    Reads content from .txt, .eml, .pdf, .docx, .xlsx, or .zip files.
     """
     ext = os.path.splitext(file_path)[1].lower()
     try:
@@ -27,6 +27,45 @@ def load_text_from_file(file_path: str) -> str:
                 else:
                     content = msg.get_content()
                 return content or ""
+        elif ext == '.pdf':
+            try:
+                from pypdf import PdfReader
+                reader = PdfReader(file_path)
+                text = ""
+                for page in reader.pages:
+                    text += page.extract_text() + "\n"
+                return text
+            except Exception as e:
+                logger.error(f"Error reading PDF {file_path}: {e}")
+                return ""
+        elif ext == '.docx':
+            try:
+                import docx
+                doc = docx.Document(file_path)
+                return "\n".join([para.text for para in doc.paragraphs])
+            except Exception as e:
+                logger.error(f"Error reading DOCX {file_path}: {e}")
+                return ""
+        elif ext == '.xlsx':
+            try:
+                import openpyxl
+                wb = openpyxl.load_workbook(file_path, data_only=True)
+                text = ""
+                for sheet in wb:
+                    for row in sheet.iter_rows(values_only=True):
+                        text += " ".join([str(cell) for cell in row if cell is not None]) + "\n"
+                return text
+            except Exception as e:
+                logger.error(f"Error reading XLSX {file_path}: {e}")
+                return ""
+        elif ext == '.zip':
+            try:
+                import zipfile
+                with zipfile.ZipFile(file_path, 'r') as zref:
+                    return "\n".join(zref.namelist())
+            except Exception as e:
+                logger.error(f"Error reading ZIP {file_path}: {e}")
+                return ""
         else:
             with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
                 return f.read()
