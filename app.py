@@ -16,6 +16,12 @@ app.secret_key = os.urandom(24) # Strong random key for sessions
 # Initialize database
 init_db()
 
+app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024 # 5MB Upload Limit
+
+@app.errorhandler(413)
+def request_entity_too_large(error):
+    return jsonify({"error": "File too large. Maximum size allowed is 5MB."}), 413
+
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
@@ -115,8 +121,9 @@ def scan_url():
     
     # Store in database logs
     user_id = session.get('user_id')
-    risk_score = float(result['score']) / 100.0
-    store_scan_log('url', risk_score, result['verdict'], identifier=url, user_id=user_id)
+    # Risk Score: 0.0 (Safe) to 1.0 (Dangerous)
+    risk_score = (100.0 - float(result['score'])) / 100.0
+    store_scan_log('url', risk_score, result['verdict'], identifier=url, user_id=user_id, emotions=result.get('eds_breakdown'))
     
     return jsonify(result)
 
@@ -156,14 +163,23 @@ def scan_email_file():
 
     filename = file.filename.lower()
     content = ""
+    subject = "Email Scan"
+    sender = "Web Upload"
     
     try:
         if filename.endswith('.txt'):
             content = file.read().decode('utf-8', errors='ignore')
+            subject = f"Text File: {file.filename}"
         elif filename.endswith('.eml'):
             import email
             raw_eml = file.read().decode('utf-8', errors='ignore')
             msg = email.message_from_string(raw_eml)
+            
+            # Extract Metadata
+            subject = msg.get('Subject', 'No Subject')
+            sender = msg.get('From', 'Unknown Sender')
+            
+            # Extract Body
             if msg.is_multipart():
                 for part in msg.walk():
                     if part.get_content_type() == "text/plain":
@@ -174,29 +190,32 @@ def scan_email_file():
         elif filename.endswith('.msg'):
             try:
                 import extract_msg
-                msg = extract_msg.Message(file.read())
-                content = msg.body
+                msg_obj = extract_msg.Message(file.read())
+                content = msg_obj.body
+                subject = msg_obj.subject if msg_obj.subject else "MSG File"
+                sender = msg_obj.sender if msg_obj.sender else "Unknown Sender"
             except ImportError:
-                return jsonify({"error": "MSG file support is not enabled. Please contact administrator to install extract-msg."}), 400
+                return jsonify({"error": "MSG file support is not enabled."}), 400
         else:
-            return jsonify({"error": "Unsupported file format"}), 400
+            return jsonify({"error": "Unsupported file format. Please upload .eml or .txt files."}), 400
             
     except Exception as e:
+        app.logger.error(f"EML Parsing Error: {str(e)}")
         return jsonify({"error": f"Failed to parse file: {str(e)}"}), 500
 
     if not content.strip():
         return jsonify({"error": "Could not extract text from email file"}), 400
 
     # Simulate processing time
-    time.sleep(1.5)
+    time.sleep(1.0)
     result = analyze_email(content)
     
     # Store in database
     user_id = session.get('user_id')
     store_email_scan({
-        "subject": f"File: {file.filename}",
-        "sender": "Web Upload",
-        "body": content[:500] + "...", # Store snippet
+        "subject": subject,
+        "sender": sender,
+        "body": content[:1000] + ("..." if len(content) > 1000 else ""),
         "phishing_probability": result['phishing_probability'],
         "emotional_deception_score": result['emotional_deception_score'],
         "verdict": result['verdict'],
@@ -243,8 +262,9 @@ def scan_file():
     # Store in database logs
     user_id = session.get('user_id')
     try:
-        risk_score = float(result['score']) / 100.0
-        store_scan_log('file', risk_score, result['verdict'], identifier=file_name, user_id=user_id)
+        # Risk Score: 0.0 (Safe) to 1.0 (Dangerous)
+        risk_score = (100.0 - float(result['score'])) / 100.0
+        store_scan_log('file', risk_score, result['verdict'], identifier=file_name, user_id=user_id, emotions=result.get('eds_breakdown'))
     except Exception as e:
         print(f"Database logging error: {e}")
     

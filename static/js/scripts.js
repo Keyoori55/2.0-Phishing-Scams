@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const verdict = data.verdict;
         
         let labelText = 'PHISHING RISK';
-        let displayScore = data.score;
+        let displayScore = 100 - data.score;
         let verdictText = verdict;
         let badgeColor = '#dc2626';
         let badgeBg = '#fef2f2';
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const scoreText = document.getElementById('score-text');
         
         let strokeColor = '#16a34a'; // Default safe green
-        if (displayScore >= 51) strokeColor = '#dc2626'; // High risk red
+        if (displayScore >= 61) strokeColor = '#dc2626'; // High risk red
         else if (displayScore >= 31) strokeColor = '#f59e0b'; // Suspicious orange
 
         let current = 0;

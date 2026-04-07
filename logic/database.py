@@ -3,7 +3,7 @@ from mysql.connector import errorcode
 import os
 from dotenv import load_dotenv
 from werkzeug.security import generate_password_hash, check_password_hash
-from datetime import datetime
+from datetime import datetime, timedelta
 
 load_dotenv()
 
@@ -11,10 +11,10 @@ def get_db_connection():
     """Establishes and returns a connection to the MySQL database."""
     try:
         conn = mysql.connector.connect(
-            host=os.getenv('DB_HOST', 'localhost'),
-            user=os.getenv('DB_USER', 'root'),
-            password=os.getenv('DB_PASSWORD', ''),
-            database=os.getenv('DB_NAME', 'ped_eds_db')
+            host=os.getenv('DB_HOST'),
+            user=os.getenv('DB_USER'),
+            password=os.getenv('DB_PASSWORD'),
+            database=os.getenv('DB_NAME')
         )
         return conn
     except mysql.connector.Error as err:
@@ -31,9 +31,9 @@ def create_database():
     """Creates the database and returns a connection."""
     try:
         conn = mysql.connector.connect(
-            host=os.getenv('DB_HOST', 'localhost'),
-            user=os.getenv('DB_USER', 'root'),
-            password=os.getenv('DB_PASSWORD', '')
+            host=os.getenv('DB_HOST'),
+            user=os.getenv('DB_USER'),
+            password=os.getenv('DB_PASSWORD')
         )
         cursor = conn.cursor()
         cursor.execute(f"CREATE DATABASE IF NOT EXISTS {os.getenv('DB_NAME', 'ped_eds_db')}")
@@ -95,7 +95,7 @@ def init_db():
         ") ENGINE=InnoDB"
     )
     
-    # Updated scan_logs with user_id and identifier
+    # Updated scan_logs with user_id, identifier and emotion scores
     tables['scan_logs'] = (
         "CREATE TABLE IF NOT EXISTS scan_logs ("
         "  id INT AUTO_INCREMENT PRIMARY KEY,"
@@ -104,6 +104,11 @@ def init_db():
         "  identifier TEXT NULL,"
         "  risk_score FLOAT,"
         "  verdict VARCHAR(50),"
+        "  fear FLOAT DEFAULT 0.0,"
+        "  urgency FLOAT DEFAULT 0.0,"
+        "  trust FLOAT DEFAULT 0.0,"
+        "  greed FLOAT DEFAULT 0.0,"
+        "  authority FLOAT DEFAULT 0.0,"
         "  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,"
         "  INDEX idx_scan_type (scan_type),"
         "  INDEX idx_created_at (created_at),"
@@ -138,7 +143,11 @@ def init_db():
         "  model_type VARCHAR(50),"
         "  version VARCHAR(50),"
         "  accuracy FLOAT,"
+        "  precision_score FLOAT,"
+        "  recall_score FLOAT,"
         "  f1_score FLOAT,"
+        "  training_duration FLOAT,"
+        "  dataset_size INT,"
         "  training_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,"
         "  active_status BOOLEAN DEFAULT TRUE"
         ") ENGINE=InnoDB"
@@ -151,23 +160,56 @@ def init_db():
             cursor.execute(table_description)
         except mysql.connector.Error as err:
             if err.errno == errorcode.ER_TABLE_EXISTS_ERROR:
-                # Check if we need to update existing tables (Simple approach)
-                if table_name == 'emails':
-                    try:
-                        cursor.execute("ALTER TABLE emails ADD COLUMN IF NOT EXISTS user_id INT NULL")
-                        cursor.execute("ALTER TABLE emails ADD INDEX IF NOT EXISTS idx_user_id (user_id)")
-                    except: pass
-                if table_name == 'scan_logs':
-                    try:
-                        cursor.execute("ALTER TABLE scan_logs ADD COLUMN IF NOT EXISTS user_id INT NULL")
-                        cursor.execute("ALTER TABLE scan_logs ADD COLUMN IF NOT EXISTS identifier TEXT NULL")
-                        cursor.execute("ALTER TABLE scan_logs ADD INDEX IF NOT EXISTS idx_user_id (user_id)")
-                    except: pass
-                print("already exists/updated.")
+                print("already exists.")
             else:
                 print(err.msg)
         else:
             print("OK")
+
+        # --- Update existing tables with new columns if needed ---
+        if table_name == 'emails':
+            try:
+                cursor.execute("ALTER TABLE emails ADD COLUMN user_id INT NULL")
+            except mysql.connector.Error as err:
+                if err.errno != 1060: pass
+            try:
+                cursor.execute("ALTER TABLE emails ADD INDEX idx_user_id (user_id)")
+            except: pass
+
+        if table_name == 'scan_logs':
+            columns_to_add = [
+                ("user_id", "INT NULL"),
+                ("identifier", "TEXT NULL"),
+                ("fear", "FLOAT DEFAULT 0.0"),
+                ("urgency", "FLOAT DEFAULT 0.0"),
+                ("trust", "FLOAT DEFAULT 0.0"),
+                ("greed", "FLOAT DEFAULT 0.0"),
+                ("authority", "FLOAT DEFAULT 0.0")
+            ]
+            for col_name, col_type in columns_to_add:
+                try:
+                    cursor.execute(f"ALTER TABLE scan_logs ADD COLUMN {col_name} {col_type}")
+                except mysql.connector.Error as err:
+                    if err.errno != 1060:
+                        print(f"Error adding column {col_name} to scan_logs: {err.msg}")
+            try:
+                cursor.execute("ALTER TABLE scan_logs ADD INDEX idx_user_id (user_id)")
+            except: pass
+
+        if table_name == 'model_history':
+            columns_to_add = [
+                ("precision_score", "FLOAT"),
+                ("recall_score", "FLOAT"),
+                ("f1_score", "FLOAT"),
+                ("training_duration", "FLOAT"),
+                ("dataset_size", "INT")
+            ]
+            for col_name, col_type in columns_to_add:
+                try:
+                    cursor.execute(f"ALTER TABLE model_history ADD COLUMN {col_name} {col_type}")
+                except mysql.connector.Error as err:
+                    if err.errno != 1060:
+                        print(f"Error adding column {col_name} to model_history: {err.msg}")
 
     cursor.close()
     conn.close()
@@ -228,19 +270,29 @@ def store_email_scan(data, emotion_breakdown, user_id=None):
         cursor.close()
         conn.close()
 
-def store_scan_log(scan_type, risk_score, verdict, identifier=None, user_id=None):
-    """Stores a log of a URL or File scan with user association."""
+def store_scan_log(scan_type, risk_score, verdict, identifier=None, user_id=None, emotions=None):
+    """Stores a log of a URL or File scan with emotion scores."""
     conn = get_db_connection()
     if not conn:
         return False
     
+    if emotions is None:
+        emotions = {}
+
     cursor = conn.cursor()
     add_log = (
         "INSERT INTO scan_logs "
-        "(user_id, scan_type, identifier, risk_score, verdict) "
-        "VALUES (%s, %s, %s, %s, %s)"
+        "(user_id, scan_type, identifier, risk_score, verdict, fear, urgency, trust, greed, authority) "
+        "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
     )
-    log_data = (user_id, scan_type, identifier, risk_score, verdict)
+    log_data = (
+        user_id, scan_type, identifier, risk_score, verdict,
+        emotions.get('fear', 0.0),
+        emotions.get('urgency', 0.0),
+        emotions.get('trust', 0.0),
+        emotions.get('greed', 0.0),
+        emotions.get('authority', 0.0)
+    )
     
     try:
         cursor.execute(add_log, log_data)
@@ -390,8 +442,8 @@ def get_user_scan_history(user_id):
         cursor.close()
         conn.close()
 
-def log_model_performance(model_type, version, accuracy, f1_score):
-    """Logs a new AI model performance record."""
+def log_model_performance(model_type, version, accuracy, precision, recall, f1, duration=0, size=0):
+    """Logs a new AI model performance record with detailed metrics."""
     conn = get_db_connection()
     if not conn:
         return False
@@ -399,15 +451,15 @@ def log_model_performance(model_type, version, accuracy, f1_score):
     cursor = conn.cursor()
     add_history = (
         "INSERT INTO model_history "
-        "(model_type, version, accuracy, f1_score, training_date) "
-        "VALUES (%s, %s, %s, %s, %s)"
+        "(model_type, version, accuracy, precision_score, recall_score, f1_score, training_duration, dataset_size, training_date) "
+        "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
     )
     
     # Deactivate previous versions for this model type
     try:
         cursor.execute("UPDATE model_history SET active_status = FALSE WHERE model_type = %s", (model_type,))
         
-        data = (model_type, version, accuracy, f1_score, datetime.now())
+        data = (model_type, version, float(accuracy), float(precision), float(recall), float(f1), float(duration), int(size), datetime.now())
         cursor.execute(add_history, data)
         conn.commit()
         return True
@@ -478,11 +530,10 @@ def get_dashboard_stats(user_id):
             if s_type in stats['scan_distribution']:
                 stats['scan_distribution'][s_type] += 1
                 
-            # Risk Distribution
-            display_score = score * 100
-            if display_score < 30:
+            # Risk Distribution (0-0.3 Safe, 0.31-0.6 Suspicious, 0.61-1.0 High)
+            if score <= 0.3:
                 stats['risk_distribution']['low'] += 1
-            elif display_score < 70:
+            elif score <= 0.6:
                 stats['risk_distribution']['medium'] += 1
             else:
                 stats['risk_distribution']['high'] += 1
@@ -490,7 +541,15 @@ def get_dashboard_stats(user_id):
         if stats['kpis']['total_scans'] > 0:
             stats['kpis']['avg_risk'] = round(total_risk_sum / stats['kpis']['total_scans'], 1)
 
-        # 2. Scans Over Time (Last 7 days)
+        # 2. Scans Over Time (Last 7 days - with 0 mapping)
+        days = []
+        for i in range(6, -1, -1):
+            day = datetime.now() - timedelta(days=i)
+            days.append(day.strftime('%Y-%m-%d'))
+        
+        # Initialize day map
+        day_map = {day: 0 for day in days}
+        
         query_t = (
             "SELECT DATE(created_at) as date, COUNT(*) as count FROM ("
             "  SELECT created_at FROM emails WHERE user_id = %s "
@@ -503,18 +562,30 @@ def get_dashboard_stats(user_id):
         cursor.execute(query_t, (user_id, user_id))
         t_rows = cursor.fetchall()
         for row in t_rows:
-            stats['scans_over_time']['labels'].append(row['date'].strftime('%a'))
-            stats['scans_over_time']['data'].append(row['count'])
+            date_str = row['date'].strftime('%Y-%m-%d')
+            if date_str in day_map:
+                day_map[date_str] = row['count']
+        
+        # Fill stats
+        for date_str in days:
+            d_obj = datetime.strptime(date_str, '%Y-%m-%d')
+            stats['scans_over_time']['labels'].append(d_obj.strftime('%a'))
+            stats['scans_over_time']['data'].append(day_map[date_str])
 
-        # 4. Top Indicators (Averages)
+        # 4. Top Indicators (Merged Averages from Emails and Scan Logs)
         query_i = (
             "SELECT AVG(fear) as fear, AVG(urgency) as urgency, AVG(trust) as trust, "
-            "AVG(greed) as greed, AVG(authority) as authority FROM emotion_scores es "
-            "JOIN emails e ON es.email_id = e.id WHERE e.user_id = %s"
+            "AVG(greed) as greed, AVG(authority) as authority FROM ("
+            "  SELECT fear, urgency, trust, greed, authority FROM emotion_scores es "
+            "  JOIN emails e ON es.email_id = e.id WHERE e.user_id = %s "
+            "  UNION ALL "
+            "  SELECT fear, urgency, trust, greed, authority FROM scan_logs WHERE user_id = %s"
+            ") as merged_emotions"
         )
-        cursor.execute(query_i, (user_id,))
+        cursor.execute(query_i, (user_id, user_id))
         i_row = cursor.fetchone()
         if i_row and i_row['fear'] is not None:
+            print(f"DEBUG: Found emotion data: {i_row}")
             stats['top_indicators']['data'] = [
                 round(float(i_row['fear']), 2),
                 round(float(i_row['urgency']), 2),
@@ -522,10 +593,14 @@ def get_dashboard_stats(user_id):
                 round(float(i_row['greed']), 2),
                 round(float(i_row['authority']), 2)
             ]
+        else:
+            print("DEBUG: No emotion data found or averages were None")
+            # Provide zeroed data if no scans yet, ensuring chart isn't empty
+            stats['top_indicators']['data'] = [0, 0, 0, 0, 0]
 
         return stats
     except mysql.connector.Error as err:
-        print(f"Error fetching dashboard stats: {err}")
+        print(f"DEBUG: Error fetching dashboard stats: {err}")
         return None
     finally:
         cursor.close()

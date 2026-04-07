@@ -18,54 +18,6 @@
             </div>
         </div>
 
-        <div class="dashboard-grid">
-            <!-- Personal History List -->
-            <div class="dashboard-card history-card">
-                <h3><i data-lucide="user"></i> My Recent Scans</h3>
-                <div class="table-responsive">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Email Source</th>
-                                <th>Risk</th>
-                                <th>Score</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for scan in user_scans %}
-                            <tr>
-                                <td>{{ scan.created_at.strftime('%m/%d') }}</td>
-                                <td>
-                                    <span class="badge" style="background: #f1f5f9; color: #475569;">
-                                        {% if scan.type == 'email' %}
-                                            {% if 'File:' in scan.identifier %}Uploaded File{% else %}Pasted Email{% endif %}
-                                        {% elif scan.type == 'url' %}URL Scan
-                                        {% elif scan.type == 'file' %}System File
-                                        {% else %}{{ scan.type|capitalize }}{% endif %}
-                                    </span>
-                                </td>
-                                <td>
-                                    {% if (scan.score * 100) >= 70 %}
-                                    <span style="color: #dc2626; font-weight: 700;">High</span>
-                                    {% elif (scan.score * 100) >= 30 %}
-                                    <span style="color: #f59e0b; font-weight: 700;">Medium</span>
-                                    {% else %}
-                                    <span style="color: #16a34a; font-weight: 700;">Low</span>
-                                    {% endif %}
-                                </td>
-                                <td style="font-weight: 600;">{{ (scan.score * 100)|round(2) }}%</td>
-                            </tr>
-{% else %}
-                            <tr>
-                                <td colspan="5" style="text-align: center;">You haven't performed any scans yet.</td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
         <!-- KPI Metrics Header -->
         <div class="kpi-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; margin-top: 1.5rem;">
             <div class="kpi-card" style="background: white; padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; gap: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
@@ -105,6 +57,55 @@
                 </div>
             </div>
         </div>
+
+        <div class="dashboard-grid">
+            <!-- Personal History List -->
+            <div class="dashboard-card history-card">
+                <h3><i data-lucide="user"></i> My Recent Scans</h3>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Email Source</th>
+                                <th>Risk</th>
+                                <th>Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for scan in user_scans %}
+                            <tr>
+                                <td>{{ scan.created_at.strftime('%m/%d') }}</td>
+                                <td>
+                                    <span class="badge" style="background: #f1f5f9; color: #475569;">
+                                        {% if scan.type == 'email' %}
+                                            {% if 'File:' in scan.identifier %}Uploaded File{% else %}Pasted Email{% endif %}
+                                        {% elif scan.type == 'url' %}URL Scan
+                                        {% elif scan.type == 'file' %}System File
+                                        {% else %}{{ scan.type|capitalize }}{% endif %}
+                                    </span>
+                                </td>
+                                <td>
+                                    {% if scan.score >= 0.61 %}
+                                    <span style="color: #dc2626; font-weight: 700;">High</span>
+                                    {% elif scan.score >= 0.31 %}
+                                    <span style="color: #f59e0b; font-weight: 700;">Suspicious</span>
+                                    {% else %}
+                                    <span style="color: #16a34a; font-weight: 700;">Safe</span>
+                                    {% endif %}
+                                </td>
+                                <td style="font-weight: 600;">{{ (scan.score * 100)|round(2) }}%</td>
+                            </tr>
+{% else %}
+                            <tr>
+                                <td colspan="5" style="text-align: center;">You haven't performed any scans yet.</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
 
         <!-- Analytics Overview -->
         <h2 style="margin: 2rem 0 1.25rem; display: flex; align-items: center; gap: 0.75rem; font-size: 1.5rem; color: #0f172a;"><i data-lucide="bar-chart-2"></i> Intelligence Insights</h2>
@@ -152,6 +153,8 @@
                                 <th>Date</th>
                                 <th>Model Name</th>
                                 <th>Version</th>
+                                <th>Samples</th>
+                                <th>Time (s)</th>
                                 <th>Accuracy</th>
                                 <th>F1 Score</th>
                                 <th>Status</th>
@@ -163,6 +166,8 @@
                                 <td>{{ record.training_date.strftime('%Y-%m-%d %H:%M') }}</td>
                                 <td>{{ record.model_type }}</td>
                                 <td>{{ record.version }}</td>
+                                <td>{{ record.dataset_size or 'N/A' }}</td>
+                                <td>{{ (record.training_duration)|round(2) if record.training_duration else 'N/A' }}s</td>
                                 <td><span class="badge badge-success">{{ (record.accuracy * 100)|round(2) }}%</span>
                                 </td>
                                 <td><span class="badge badge-info">{{ (record.f1_score * 100)|round(2) }}%</span></td>
@@ -234,6 +239,23 @@
                 cutout: '70%'
             }
         });
+
+        // Add Empty State Helper
+        const checkEmpty = (chartId, data) => {
+            if (!data || data.length === 0 || data.every(v => v === 0)) {
+                const canvas = document.getElementById(chartId);
+                const ctx = canvas.getContext('2d');
+                ctx.font = '14px Inter, sans-serif';
+                ctx.fillStyle = '#94a3b8';
+                ctx.textAlign = 'center';
+                ctx.fillText('No data available for this period', canvas.width / 2, canvas.height / 2);
+            }
+        };
+
+        checkEmpty('phishingChart', [stats.phishing_vs_legitimate.phishing, stats.phishing_vs_legitimate.legitimate]);
+        checkEmpty('scanGraph', stats.scans_over_time.data);
+        checkEmpty('distributionChart', [stats.scan_distribution.url, stats.scan_distribution.email, stats.scan_distribution.file]);
+        checkEmpty('indicatorChart', stats.top_indicators.data);
 
         // 2. Activity Trends (Line)
         const scanChartCtx = document.getElementById('scanGraph').getContext('2d');

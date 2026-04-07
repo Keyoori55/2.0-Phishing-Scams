@@ -1,8 +1,9 @@
 import pandas as pd
 import joblib
 import os
+import time
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, f1_score
+from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 from logic.database import log_model_performance
 from logic.ml_logic import load_raw_datasets, get_email_pipeline, get_file_pipeline
 
@@ -22,6 +23,13 @@ def train_email_model(dataset_path='datasets'):
     X = df['text']
     y = df['label']
     
+    # Dataset Guardrail: Minimum 50 samples per class
+    counts = df['label'].value_counts()
+    for cat in ['legitimate', 'phishing', 'suspicious']:
+        if cat not in counts or counts[cat] < 50:
+            print(f"Error: Dataset too small for class '{cat}'. Got {counts.get(cat, 0)}, need 50+.")
+            return 0, 0
+    
     # Split data
     # If we have very little data (like the current 6 files), use a smaller test size or avoid split
     test_size = 0.2 if len(df) > 5 else 0.1
@@ -32,14 +40,18 @@ def train_email_model(dataset_path='datasets'):
     
     # Train
     print(f"Training email model with {len(df)} samples...")
+    start_time = time.perf_counter()
     pipeline.fit(X_train, y_train)
+    duration = time.perf_counter() - start_time
     
     # Evaluate
     predictions = pipeline.predict(X_test)
     acc = accuracy_score(y_test, predictions)
     f1 = f1_score(y_test, predictions, average='weighted')
+    precision = precision_score(y_test, predictions, average='weighted')
+    recall = recall_score(y_test, predictions, average='weighted')
     
-    print(f"Email Model Trained. Accuracy: {acc:.2f}, F1: {f1:.2f}")
+    print(f"Email Model Trained in {duration:.2f}s. Accuracy: {acc:.2f}")
     
     # Save
     if not os.path.exists('models'):
@@ -47,7 +59,16 @@ def train_email_model(dataset_path='datasets'):
     joblib.dump(pipeline, 'models/email_model.joblib')
     
     # Log to DB
-    log_model_performance("Email Detector", "3.0.0", float(acc), float(f1))
+    log_model_performance(
+        "Email Detector", 
+        "3.1.0", 
+        float(acc), 
+        float(precision), 
+        float(recall), 
+        float(f1), 
+        float(duration), 
+        int(len(df))
+    )
     
     return acc, f1
 
@@ -66,19 +87,33 @@ def train_file_model(data_path='data/files.csv'):
     
     pipeline = get_file_pipeline()
     
-    print("Training file model...")
+    print(f"Training file model with {len(df)} samples...")
+    start_time = time.perf_counter()
     pipeline.fit(X_train, y_train)
+    duration = time.perf_counter() - start_time
     
     predictions = pipeline.predict(X_test)
     acc = accuracy_score(y_test, predictions)
     f1 = f1_score(y_test, predictions, average='weighted')
-    
-    print(f"File Model Trained. Accuracy: {acc:.2f}, F1: {f1:.2f}")
+    # Dummy precision/recall for simple file model if not calculated
+    prec = accuracy_score(y_test, predictions) 
+    rec = accuracy_score(y_test, predictions)
+
+    print(f"File Model Trained in {duration:.2f}s. Accuracy: {acc:.2f}")
     
     joblib.dump(pipeline, 'models/file_model.joblib')
     
     # Log to DB
-    log_model_performance("File Detector", "3.0.0", float(acc), float(f1))
+    log_model_performance(
+        "File Detector", 
+        "3.0.0", 
+        float(acc), 
+        float(prec), 
+        float(rec), 
+        float(f1), 
+        float(duration), 
+        int(len(df))
+    )
     
     return acc, f1
 
